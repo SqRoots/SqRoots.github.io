@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>李宣</title>
+	<link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css">
+</head>
+
+<body style="background: #dedcd4;font-family: &#39;Microsoft Yahei&#39;,Helvetica,tahoma,arial,Verdana,sans-serif;">
+	<center>
+		<br>
+		<br>
+		<br>
+		<h1>李宣</h1>
+		<br>
+		<h3>[公告]</h3>
+		<p>由于 .me 域名不支持备案，lixuan.me 目前只用于跳转到 lixuan.xyz</p>
+		<p>您也可以直接使用<a href="https://lixuan.xyz/">lixuan.xyz</a>访问我的主页</p>
+		<br>
+		<p><span id="time">5</span>秒后将转入<a href="https://lixuan.xyz/">李宣的主页</a></p>
+	</center>
+
+	<script type="text/javascript">
+		var url = 'https://lixuan.xyz';
+		setInterval(update_time, 1000);
+
+		function update_time() {
+			var i = document.getElementById("time").innerHTML;
+			document.getElementById("time").innerHTML = i - 1;
+			if (i == 1) window.location.href = url;
+		}
+	</script>
+</body>
+</html>
