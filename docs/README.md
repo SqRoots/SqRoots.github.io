@@ -33,9 +33,10 @@ config:
     type: features
     features:
       -
-        title: 响应式布局
-        icon: 💻
-        details: 适配移动设备，PC，平板
+        title: 地图找工作
+        icon: 📍
+        link: /job/index.html
+        details: 2019年春节后，我也加入到了找工作大军之中。由于之前租房时，使用过“地图找房”，感觉很方便，但是大型招聘网站都没有类似的功能。于是，我花了近一周的时间，从Boss直聘上采集了与数据分析相关的一些职位与公司数据
       -
         title: 博客 & 文档
         icon: 📖
