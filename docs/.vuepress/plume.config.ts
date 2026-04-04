@@ -19,7 +19,7 @@ import { zhCollections } from './collections/index.js'
  * @see https://theme-plume.vuejs.press/config/theme/
  */
 export default defineThemeConfig({
-  logo: 'favicon.png',
+  logo: '/favicon.png',
 
   appearance: true,  // 配置 深色模式
 
@@ -50,7 +50,7 @@ export default defineThemeConfig({
    * @see https://theme-plume.vuejs.press/config/theme/#profile
    */
   profile: {
-    avatar: 'https://theme-plume.vuejs.press/plume.png',
+    avatar: '/favicon.png',
     name: '李宣',
     description: '一个分析数据的小学生',
     // circle: true,
