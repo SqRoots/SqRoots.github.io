@@ -12,7 +12,8 @@
 
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import navbar from './navbar'
-import collections from './collections'
+// import collections from './collections'
+import { zhCollections } from './collections/index.js'
 
 /**
  * @see https://theme-plume.vuejs.press/config/theme/
@@ -58,7 +59,7 @@ export default defineThemeConfig({
   },
 
   navbar,
-  collections,
+  collections: zhCollections,
 
   /**
    * 公告板

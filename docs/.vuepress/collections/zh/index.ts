@@ -3,7 +3,7 @@ import { tciCheatSheet } from './cheat-sheet.js'
 import { tciCollection } from './collection.js'
 
 
-export const myCollections: ThemeCollections = defineCollections([
+export const zhCollections: ThemeCollections = defineCollections([
   // 迷题
   { type: 'post', dir: '/puzzle/', link: '/puzzle/', title: '谜题' },
   // 时光

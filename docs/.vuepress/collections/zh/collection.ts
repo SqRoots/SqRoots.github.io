@@ -15,10 +15,6 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
         'intro',
         'theme',
         'locales',
-        'navbar',
-        'sidebar',
-        'collections',
-        'markdown',
       ],
     },
     {
@@ -28,8 +24,6 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
       items: [
         'basic',
         'home',
-        'post',
-        'friend',
       ],
     },
     {
@@ -42,12 +36,6 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
         'search',
         'reading-time',
         'llms',
-        'markdown-enhance',
-        'markdown-power',
-        'markdown-image',
-        'markdown-math',
-        'markdown-include',
-        'watermark',
       ],
     },
   ],

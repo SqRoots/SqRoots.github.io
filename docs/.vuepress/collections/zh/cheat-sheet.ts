@@ -4,25 +4,22 @@ import { defineCollection } from 'vuepress-theme-plume'
 export const tciCheatSheet: ThemeCollectionItem = defineCollection({
   type: 'doc',
   title: '小抄',
-  dir: 'config',
+  dir: 'cheat-sheet',
   linkPrefix: '/cheat-sheet/',
   sidebar: [
     {
       text: '数学',
+      prefix: 'math',
       collapsed: false,
       items: [
         'intro',
         'theme',
         'locales',
-        'navbar',
-        'sidebar',
-        'collections',
-        'markdown',
       ],
     },
     {
       text: '计算机',
-      prefix: 'frontmatter',
+      prefix: 'computer',
       collapsed: false,
       items: [
         'basic',
@@ -33,7 +30,7 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
     },
     {
       text: '无线电',
-      prefix: 'plugins',
+      prefix: 'ham',
       collapsed: false,
       items: [
         '',
@@ -41,17 +38,11 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
         'search',
         'reading-time',
         'llms',
-        'markdown-enhance',
-        'markdown-power',
-        'markdown-image',
-        'markdown-math',
-        'markdown-include',
-        'watermark',
       ],
     },
     {
       text: 'Python',
-      prefix: 'plugins',
+      prefix: 'python',
       collapsed: false,
       items: [
         '',
@@ -59,12 +50,6 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
         'search',
         'reading-time',
         'llms',
-        'markdown-enhance',
-        'markdown-power',
-        'markdown-image',
-        'markdown-math',
-        'markdown-include',
-        'watermark',
       ],
     },
   ],

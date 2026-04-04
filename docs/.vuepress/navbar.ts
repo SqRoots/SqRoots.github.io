@@ -11,8 +11,9 @@ export default defineNavbarConfig([
   { text: '典藏', link: '/collection/' },
   { text: '小抄', link: '/cheat-sheet/' },
   { text: '谜题', link: '/puzzle/' },
-  {
-    text: '笔记',
-    items: [{ text: '示例', link: '/demo/README.md' }]
-  },
+  // {
+  //   text: '笔记',
+  //   items: [{ text: '示例', link: '/demo/README.md' }]
+  // },
+  { text: '关于', link: '/about/README.md'}
 ])
