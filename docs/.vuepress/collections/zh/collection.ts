@@ -13,8 +13,6 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
       collapsed: false,
       items: [
         'intro',
-        'theme',
-        'locales',
       ],
     },
     {
@@ -23,7 +21,6 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
       collapsed: false,
       items: [
         'basic',
-        'home',
       ],
     },
     {
@@ -33,9 +30,6 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
       items: [
         '',
         'shiki',
-        'search',
-        'reading-time',
-        'llms',
       ],
     },
   ],

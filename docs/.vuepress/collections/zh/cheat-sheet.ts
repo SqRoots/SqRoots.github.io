@@ -13,8 +13,6 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       collapsed: false,
       items: [
         'intro',
-        'theme',
-        'locales',
       ],
     },
     {
@@ -23,9 +21,6 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       collapsed: false,
       items: [
         'basic',
-        'home',
-        'post',
-        'friend',
       ],
     },
     {
@@ -35,9 +30,6 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       items: [
         '',
         'shiki',
-        'search',
-        'reading-time',
-        'llms',
       ],
     },
     {
@@ -47,9 +39,6 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       items: [
         '',
         'shiki',
-        'search',
-        'reading-time',
-        'llms',
       ],
     },
   ],

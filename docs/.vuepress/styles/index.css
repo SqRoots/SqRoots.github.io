@@ -1,0 +1,7 @@
+footer.vp-footer div.container div.message{
+    color: rgba(0,0,0,0.2);
+}
+
+footer.vp-footer div.container div.message>a{
+    color: rgba(0,0,0,0.2);
+}

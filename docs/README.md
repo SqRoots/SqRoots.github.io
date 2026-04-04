@@ -23,6 +23,10 @@ config:
           link: /cheat-sheet/
         -
           theme: sponsor
+          text: 迷题
+          link: /puzzle/
+        -
+          theme: sponsor
           text: 格言
           link: /motto/
         -
