@@ -21,7 +21,7 @@ import { Layout } from 'vuepress-theme-plume/client'
 
 // 定义要展示的文字（响应式数据）
 const displayText = ref('分享是人类进步的阶梯')
-const displayAuthor = ref('李宣')
+const displayAuthor = ref('—— 老肉杂谈 ——')
 
 // ===== 一次性加载全部数据 =====
 let motto_list = [];
@@ -35,7 +35,7 @@ const changeText = () => {
     motto = updateMotto();
     if(motto && motto.content !== undefined && motto.author !== undefined){
       displayText.value = motto.content || '分享是人类进步的阶梯';
-      displayAuthor.value = "—— " + (motto.author || '李宣') + " ——";
+      displayAuthor.value = "—— " + (motto.author || '老肉杂谈') + " ——";
     }
 
 }
@@ -57,7 +57,7 @@ async function loadAllData() {
     motto = updateMotto(url_motto_id);
     if(motto && motto.content !== undefined && motto.author !== undefined){
       displayText.value = motto.content || '分享是人类进步的阶梯';
-      displayAuthor.value = "—— " + (motto.author || '李宣') + " ——";
+      displayAuthor.value = "—— " + (motto.author || '老肉杂谈') + " ——";
     }
 }
 
@@ -79,7 +79,7 @@ function updateMotto(id) {
     document.getElementById("motto_content").setAttribute('motto-id', motto.id);
     setURLMottoID(motto.id);
     displayText.value = motto.content || '分享是人类进步的阶梯';
-    displayAuthor.value = "—— " + (motto.author || '李宣') + " ——";
+    displayAuthor.value = "—— " + (motto.author || '老肉杂谈') + " ——";
     return motto;
     // // 更新 格言内容
     // document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
