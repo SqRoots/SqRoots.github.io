@@ -41,10 +41,10 @@ export default defineThemeConfig({
   // createTime: true, // 是否显示文章创建时间
 
   /* 站点页脚 */
-  // footer: {
-  //   message: 'Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
-  //   copyright: '',
-  // },
+  footer: {
+    // copyright: 'Copyright © 2014-present lixuan',
+    message: 'Copyright © 2014-present lixuan | Power by <a target="_blank" href="https://v2.vuepress.vuejs.org/">VuePress</a> & <a target="_blank" href="https://theme-plume.vuejs.press">vuepress-theme-plume</a>',
+  },
 
   /**
    * @see https://theme-plume.vuejs.press/config/theme/#profile
