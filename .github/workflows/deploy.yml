@@ -42,7 +42,14 @@ jobs:
         env:
           NODE_OPTIONS: --max_old_space_size=8192
         run: pnpm run docs:build
-
+      
+      # 防止自定义域名被重置
+      - name: Copy CNAME to dist
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME docs/.vuepress/dist/
+            echo "✅ CNAME 文件已保留"
+          fi
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
