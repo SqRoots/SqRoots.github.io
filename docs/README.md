@@ -29,10 +29,6 @@ config:
           theme: sponsor
           text: 格言
           link: /motto/
-        -
-          theme: sponsor
-          text: GitHub
-          link: https://github.com/SqRoots/
   -
     type: features
     features:
