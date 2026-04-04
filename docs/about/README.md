@@ -17,14 +17,16 @@ pageLayout: doc
 
 ### 🪪 个人简介
 
-<!-- ![2020年夏 北戴河联峰山公园](./20200913-beidaihe-lianfengshan.jpg){width=500 style="display: flex; margin: 0 auto; border-radius:8px;"} -->
+![2020年夏 北戴河联峰山公园](./20200913-beidaihe-lianfengshan.jpg){width=500 style="display: flex; margin: 0 auto; border-radius:8px;"}
 
+<!-- 
 <ImageCard
   image="/about/20200913-beidaihe-lianfengshan.jpg"
   title="2020年夏 北戴河联峰山公园"
   width=500
   center=true
 />
+-->
 
 ::: info 基本信息
 【姓名】　李宣
