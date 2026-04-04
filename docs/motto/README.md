@@ -1,12 +1,135 @@
 ---
 title: 格言
-createTime: 2026/04/04 10:49:17
+createTime: 2026/04/05 20:03:17
 pageLayout: page
 ---
 
+<div class="motto">
+    <br/>
+    <div class="motto_content"><p id="motto_content" mottoId="1" style="text-align:center;white-space:pre-wrap;">{{ displayText }}</p></div>
+    <br>
+    <div id="motto_author" class="motto_author">{{ displayAuthor }}</div>
+    <br>
+    <button class="btn btn-primary" @click="changeText">更换一条</button>
+    <br><br>
+    <button class="btn btn-secondary" @click="copyURLtoClipboard">分享链接</button>
+</div>
 
-<style>
-    .motto{
+<script setup>
+import { ref } from 'vue'
+import { Layout } from 'vuepress-theme-plume/client'
+
+// 定义要展示的文字（响应式数据）
+const displayText = ref('分享是人类进步的阶梯')
+const displayAuthor = ref('李宣')
+
+// ===== 一次性加载全部数据 =====
+let motto_list = [];
+let max_id = 0;
+let motto = null;
+let url_motto_id = getURLMottoID();
+loadAllData();
+
+// 修改文字的方法
+const changeText = () => {
+    motto = updateMotto();
+    if(motto && motto.content !== undefined && motto.author !== undefined){
+      displayText.value = motto.content || '分享是人类进步的阶梯';
+      displayAuthor.value = "—— " + (motto.author || '李宣') + " ——";
+    }
+
+}
+
+async function loadAllData() {
+  try {
+    const res = await fetch(
+      'https://fc-data.lixuan.xyz/motto/data.txt',
+      { headers: {"Content-Type": "application/json; charset=utf-8"} });
+    const text = await res.text();
+    motto_list = JSON.parse('['+text.trim().slice(0,-1)+']');
+  } catch (e) {
+    motto_list = [];
+  }
+  motto_list = [...motto_list];
+  max_id = Math.max(...motto_list.filter(e => e.id >= 0).map(item => item.id)) || 0;
+
+    // 初始化元素内容
+    motto = updateMotto(url_motto_id);
+    if(motto && motto.content !== undefined && motto.author !== undefined){
+      displayText.value = motto.content || '分享是人类进步的阶梯';
+      displayAuthor.value = "—— " + (motto.author || '李宣') + " ——";
+    }
+}
+
+// 随机抽取一条格式，并展示
+function updateMotto(id) {
+  let n = motto_list.length;
+  if(typeof document !== "undefined"){
+    if(id==null){
+      // 随机抽取一条格言
+      let old_id = document.getElementById("motto_content").mottoId || 1;
+      let new_id = getRandomInt(n, old_id);
+      motto = getMottoByIndex(new_id);
+    } else {
+      // 按id取格言
+      motto = getMottoByID(id)
+    }
+
+    // 更新 id
+    document.getElementById("motto_content").setAttribute('motto-id', motto.id);
+    setURLMottoID(motto.id);
+    displayText.value = motto.content || '分享是人类进步的阶梯';
+    displayAuthor.value = "—— " + (motto.author || '李宣') + " ——";
+    return motto;
+    // // 更新 格言内容
+    // document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
+    // // 更新 作者
+    // document.getElementById("motto_author").innerHTML = "—— " + motto.author + " ——";
+  }
+}
+// 复制分享链接到剪切板
+function copyURLtoClipboard(){
+  if (typeof window !== "undefined") {
+    navigator.clipboard.writeText(window.location.href)
+  }
+}
+// 按id取格言
+function getMottoByID(id){
+  for (let v of motto_list) {
+  if(v.id==id){return v}
+  }
+}
+// 按序号取格言
+function getMottoByIndex(i){
+  return motto_list[i]
+}
+// 随机整数，需要与老
+function getRandomInt(max, old_id) {
+  let new_id = old_id;
+  while (new_id==old_id) {
+  new_id = Math.floor(Math.random() * max);
+  }
+  return new_id;
+}
+// 获取URL中的 id 参数
+function getURLMottoID(){
+  if (typeof window !== "undefined") {
+    const motto_id = new URLSearchParams(window.location.search).get('id');
+    return motto_id;
+  }
+}
+// 设置URL中的 id 参数
+function setURLMottoID(id){
+  if (typeof window !== "undefined") {
+    const url = new URL(window.location);
+    url.searchParams.set('id', id); // add or update the parameter
+    window.history.replaceState({}, '', url); // update the address bar without reload
+  }
+}
+</script>
+
+<style scoped>
+.motto{
         text-align: center;
     }
 
@@ -60,101 +183,3 @@ pageLayout: page
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 </style>
-
-
-<div class="motto">
-    <br/>
-    <div class="motto_content"><p id="motto_content" style="text-align:center;"></p></div>
-    <br>
-    <div id="motto_author" class="motto_author"></div>
-    <br>
-    <button class="btn btn-primary" onclick="updateMotto();">更换一条</button>
-    <br><br>
-    <button class="btn btn-secondary" onclick="copyURLtoClipboard();">分享链接</button>
-</div>
-
-
-<script type="text/javascript">
-// ===== 一次性加载全部数据 =====
-let motto_list = [];
-let max_id = 0;
-let url_motto_id = getURLMottoID();
-loadAllData();
-
-async function loadAllData() {
-  try {
-	const res = await fetch('https://fc-data.lixuan.xyz/motto/data.txt', { headers: {"Content-Type": "application/json; charset=utf-8"} });
-	const text = await res.text();
-    motto_list = JSON.parse('['+text.trim().slice(0,-1)+']');
-  } catch (e) {
-	motto_list = [];
-  }
-  motto_list = [...motto_list];
-  max_id = Math.max(...motto_list.filter(e => e.id >= 0).map(item => item.id)) || 0;
-
-    // 初始化元素内容
-    updateMotto(url_motto_id);
-}
-
-// 随机抽取一条格式，并展示
-function updateMotto(id) {
-  let n = motto_list.length;
-  if(typeof document !== "undefined"){
-    if(id==null){
-     // 随机抽取一条格言
-     let old_id = document.getElementById("motto_content").mottoId;
-     let new_id = getRandomInt(n, old_id);
-     motto = getMottoByIndex(new_id);
-    } else {
-     // 按id取格言
-     motto = getMottoByID(id)
-    }
-    // 更新 id
-    document.getElementById("motto_content").setAttribute('motto-id', motto.id);
-    setURLMottoID(motto.id);
-    // 更新 格言内容
-    document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
-    // 更新 作者
-    document.getElementById("motto_author").innerHTML = "—— " + motto.author + " ——";
-  }
-}
-// 复制分享链接到剪切板
-function copyURLtoClipboard(){
-  if (typeof window !== "undefined") {
-    navigator.clipboard.writeText(window.location.href)
-  }
-}
-// 按id取格言
-function getMottoByID(id){
-  for (let v of motto_list) {
-  if(v.id==id){return v}
-  }
-}
-// 按序号取格言
-function getMottoByIndex(i){
-  return motto_list[i]
-}
-// 随机整数，需要与老
-function getRandomInt(max, old_id) {
-  let new_id = old_id;
-  while (new_id==old_id) {
-  new_id = Math.floor(Math.random() * max);
-  }
-  return new_id;
-}
-// 获取URL中的 id 参数
-function getURLMottoID(){
-  if (typeof window !== "undefined") {
-    const motto_id = new URLSearchParams(window.location.search).get('id');
-    return motto_id;
-  }
-}
-// 设置URL中的 id 参数
-function setURLMottoID(id){3
-  if (typeof window !== "undefined") {
-    const url = new URL(window.location);
-    url.searchParams.set('id', id); // add or update the parameter
-    window.history.replaceState({}, '', url); // update the address bar without reload
-  }
-}
-</script>
