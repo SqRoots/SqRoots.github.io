@@ -99,26 +99,30 @@ async function loadAllData() {
 // 随机抽取一条格式，并展示
 function updateMotto(id) {
   let n = motto_list.length;
-  if(id==null){
-   // 随机抽取一条格言
-   let old_id = document.getElementById("motto_content").mottoId;
-   let new_id = getRandomInt(n, old_id);
-   motto = getMottoByIndex(new_id);
-  } else {
-   // 按id取格言
-   motto = getMottoByID(id)
+  if(typeof document !== "undefined"){
+    if(id==null){
+     // 随机抽取一条格言
+     let old_id = document.getElementById("motto_content").mottoId;
+     let new_id = getRandomInt(n, old_id);
+     motto = getMottoByIndex(new_id);
+    } else {
+     // 按id取格言
+     motto = getMottoByID(id)
+    }
+    // 更新 id
+    document.getElementById("motto_content").setAttribute('motto-id', motto.id);
+    setURLMottoID(motto.id);
+    // 更新 格言内容
+    document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
+    // 更新 作者
+    document.getElementById("motto_author").innerHTML = "—— " + motto.author + " ——";
   }
-  // 更新 id
-  document.getElementById("motto_content").setAttribute('motto-id', motto.id);
-  setURLMottoID(motto.id);
-  // 更新 格言内容
-  document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
-  // 更新 作者
-  document.getElementById("motto_author").innerHTML = "—— " + motto.author + " ——";
 }
 // 复制分享链接到剪切板
 function copyURLtoClipboard(){
-  navigator.clipboard.writeText(window.location.href)
+  if (typeof window !== "undefined") {
+    navigator.clipboard.writeText(window.location.href)
+  }
 }
 // 按id取格言
 function getMottoByID(id){
@@ -140,13 +144,17 @@ function getRandomInt(max, old_id) {
 }
 // 获取URL中的 id 参数
 function getURLMottoID(){
-  const motto_id = new URLSearchParams(window.location.search).get('id');
-  return motto_id;
+  if (typeof window !== "undefined") {
+    const motto_id = new URLSearchParams(window.location.search).get('id');
+    return motto_id;
+  }
 }
 // 设置URL中的 id 参数
-function setURLMottoID(id){
-  const url = new URL(window.location);
-  url.searchParams.set('id', id); // add or update the parameter
-  window.history.replaceState({}, '', url); // update the address bar without reload
+function setURLMottoID(id){3
+  if (typeof window !== "undefined") {
+    const url = new URL(window.location);
+    url.searchParams.set('id', id); // add or update the parameter
+    window.history.replaceState({}, '', url); // update the address bar without reload
+  }
 }
 </script>
