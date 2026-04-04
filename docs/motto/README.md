@@ -13,6 +13,8 @@ pageLayout: page
     <button class="btn btn-primary" @click="changeText">更换一条</button>
     <br><br>
     <button class="btn btn-secondary" @click="copyURLtoClipboard">分享链接</button>
+    <br><br>
+    <a href="https://fc-data.lixuan.xyz/motto/admin.html" target="_blank" style="position:fixed; bottom:100px; color: rgba(128,128,128,0.01);">编辑格言</a>
 </div>
 
 <script setup>
