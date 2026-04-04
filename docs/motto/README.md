@@ -20,7 +20,7 @@ import { ref } from 'vue'
 import { Layout } from 'vuepress-theme-plume/client'
 
 // 定义要展示的文字（响应式数据）
-const displayText = ref('分享是人类进步的阶梯')
+const displayText = ref('分享是人类进步的阶梯\nLoading...')
 const displayAuthor = ref('—— 老肉杂谈 ——')
 
 // ===== 一次性加载全部数据 =====
@@ -34,7 +34,7 @@ loadAllData();
 const changeText = () => {
     motto = updateMotto();
     if(motto && motto.content !== undefined && motto.author !== undefined){
-      displayText.value = motto.content || '分享是人类进步的阶梯';
+      displayText.value = motto.content || '分享是人类进步的阶梯\nLoading...';
       displayAuthor.value = "—— " + (motto.author || '老肉杂谈') + " ——";
     }
 
@@ -56,7 +56,7 @@ async function loadAllData() {
     // 初始化元素内容
     motto = updateMotto(url_motto_id);
     if(motto && motto.content !== undefined && motto.author !== undefined){
-      displayText.value = motto.content || '分享是人类进步的阶梯';
+      displayText.value = motto.content || '分享是人类进步的阶梯\nLoading...';
       displayAuthor.value = "—— " + (motto.author || '老肉杂谈') + " ——";
     }
 }
@@ -78,7 +78,7 @@ function updateMotto(id) {
     // 更新 id
     document.getElementById("motto_content").setAttribute('motto-id', motto.id);
     setURLMottoID(motto.id);
-    displayText.value = motto.content || '分享是人类进步的阶梯';
+    displayText.value = motto.content || '分享是人类进步的阶梯\nLoading...';
     displayAuthor.value = "—— " + (motto.author || '老肉杂谈') + " ——";
     return motto;
     // // 更新 格言内容
