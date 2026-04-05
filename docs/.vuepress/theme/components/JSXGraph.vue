@@ -1,15 +1,38 @@
 <template>
-  <div ref="boardRef" class="jxg-container" :style="{ height }"></div>
+  <div class="jxg-wrapper">
+    <div ref="boardRef" class="jxg-container" :style="{ width, height }"></div>
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
-
+import { ref, onMounted } from 'vue'
 const boardRef = ref(null)
+
 const props = defineProps({
+  width: {
+    type: String,
+    default: '100%'
+  },
   height: {
     type: String,
     default: '500px'
+  },
+  boundingbox: {
+    type: Array,
+    default: () => [-6, 6, 6, -6]
+  },
+  axis: {
+    type: Boolean,
+    default: false
+  },
+  grid: {
+    type: Boolean,
+    default: false
+  },
+  // 新增：保持纵横比
+  keepAspectRatio: {
+    type: Boolean,
+    default: true
   },
   code: {
     type: String,
@@ -17,11 +40,12 @@ const props = defineProps({
   }
 })
 
-// 加载资源（只加载一次）
+let board = null
+
+// 加载 JSXGraph
 function loadJSXGraph() {
   return new Promise((resolve) => {
     if (window.JXG) return resolve()
-
     const css = document.createElement('link')
     css.rel = 'stylesheet'
     css.href = 'https://cdn.jsdelivr.net/npm/jsxgraph@1.9.1/distrib/jsxgraph.css'
@@ -34,42 +58,50 @@ function loadJSXGraph() {
   })
 }
 
-// 初始化画板
-let board = null
 onMounted(async () => {
   await loadJSXGraph()
+  if (!boardRef.value) return
 
-  if (boardRef.value) {
-    board = window.JXG.JSXGraph.initBoard(boardRef.value, {
-      boundingbox: [-6, 6, 6, -6],
-      axis: true,
-      grid: true
-    })
+  board = window.JXG.JSXGraph.initBoard(boardRef.value, {
+    boundingbox: props.boundingbox,
+    axis: props.axis,
+    grid: props.grid,
+    keepAspectRatio: props.keepAspectRatio,
+    showNavigation: false,
+    showCopyright: false,
 
-    // 执行用户写的绘图代码
-    if (props.code) {
-      try {
-        new Function('board', props.code)(board)
-      } catch (e) {
-        console.error('绘图错误：', e)
-      }
+    // 网格不密集 + 更美观
+    gridX: 1,
+    gridY: 1,
+    ticksX: 1,
+    ticksY: 1
+  })
+
+  if (props.code) {
+    try {
+      new Function('board', props.code)(board)
+    } catch (e) {
+      console.error('JSXGraph 绘图错误：', e)
     }
   }
 })
 
-// 切换页面时销毁画板
 defineExpose({
   destroy() {
-    if (board) board.clear()
+    board?.clear()
   }
 })
 </script>
 
 <style scoped>
-.jxg-container {
+.jxg-wrapper {
   width: 100%;
+  display: flex;
+  justify-content: center; /* 非100%宽度时自动水平居中 */
+  margin: 20px 0;
+}
+.jxg-container {
   border: 1px solid #eee;
   border-radius: 8px;
-  margin: 20px 0;
 }
 </style>
