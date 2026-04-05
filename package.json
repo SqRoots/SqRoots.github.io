@@ -29,5 +29,8 @@
   },
   "engines": {
     "node": "^20.19.0 || >=22.0.0"
+  },
+  "dependencies": {
+    "pinyin-pro": "^3.28.0"
   }
 }
