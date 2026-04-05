@@ -33,40 +33,47 @@ config:
     type: features
     features:
       -
-        title: 地图找工作
-        icon: 📍
-        link: /job/index.html
-        details: 2019年春节后，我也加入到了找工作大军之中。由于之前租房时，使用过“地图找房”，感觉很方便，但是大型招聘网站都没有类似的功能。于是，我花了近一周的时间，从Boss直聘上采集了与数据分析相关的一些职位与公司数据
-      -
-        title: 博客 & 文档
-        icon: 📖
-        details: 无论是想写博客，或想写产品文档，或者两者兼顾
-      -
-        title: 开箱即用
-        icon: 🚀
-        details: 支持零配置即可使用，也支持丰富的自定义配置
-      -
-        title: 多语言
-        icon: ⚖
-        details: 内置了 中文/英文支持，还可以自定义添加更多的语言支持
-      -
-        title: 双色主题
-        icon: 👨‍💻
-        details: 支持 浅色/深色 主题，包括代码高亮
-      -
-        title: 插件
-        icon: 📦
-        details: 内置丰富的插件，一站式解决网站一般需求
-      -
-        title: 搜索、评论
-        icon: 🔍
-        details: 支持多种评论系统，支持本地搜索、Algolia搜索
-      -
-        title: 加密
-        icon: 🔒
-        details: 支持全站加密、部分加密（加密目录、加密文章）
-      -
-        title: Markdown 增强
+        title: 【博客】
         icon: 📝
-        details: 支持 Markdown 语法，支持 代码块分组、提示容器、任务列表、数学公式、代码演示等
+        link: https://blog.lixuan.xyz/
+        details: 个人总结、Mathematica、有趣的问题
+      -
+        title: 【笔记】
+        icon: 📒
+        link: https://note.lixuan.xyz/
+        details: 常用的公式 + 有趣的问题 + 励志的格言 ……
+      -
+        title: 【摄影】
+        icon: 📷
+        link: https://photo.lixuan.xyz/
+        details: 没有正式学过摄影，求大佬指教
+      -
+        title: 【地图找工作】
+        icon: grommet-icons:map
+        link: /job/index.html
+        details: 在租房时使用过“地图找房”，感觉很方便<br>于是也做了一个Demo
+      -
+        title: 【Mathematica问答社区】
+        icon: vscode-icons:file-type-wolfram
+        link: https://mmaqa.com/
+        details: 与各位 Mathematica 朋友一起讨论交流<br>以及写了一些笔记
+      -
+        title: 【数学之路】
+        icon: mynaui:math-square
+        details: 2011年做的数学论坛<br>已经不在维护，2026年域名也不再续费了
+      -
+        title: 我的【GitHub】
+        icon: logos:github-icon
+        link: https://github.com/SqRoots/
+        details: 学习写写代码，我一直想写几个像样的作品<br>不幸，夭折在了AI时代前夜
+      -
+        title: 我的【LinkIn】
+        icon: logos:linkedin-icon
+        link: https://www.linkedin.com/in/lixuanxyz/
+        details: 个人职业名片<br>（需要访问国际版领英）
+      -
+        title: 我的【知乎】
+        icon: ri:zhihu-line
+        link: https://www.zhihu.com/people/lixuan.xyz
+        details: 学习“学习”再学习。<br>老师，我太想进步了！
 ---
