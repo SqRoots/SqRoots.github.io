@@ -15,7 +15,7 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
         {text: 'AI网站', link: 'ai', icon: 'arcticons:openai-chatgpt'},
         {text: '数理网站', link: 'science', icon: 'mynaui:math-square'},
         {text: '技术网站', link: 'computer', icon: 'boxicons:computer'},
-        {text: '娱乐网站', link: 'entertainment', icon: 'fluent:chess-16-filled'},
+        {text: '其他网站', link: 'other', icon: 'fluent:chess-16-filled'},
         {text: '我的网站', link: 'my-web', icon: 'stash:person-duotone'},
       ]
     },
