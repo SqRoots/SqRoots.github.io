@@ -9,12 +9,9 @@ import { defineNavbarConfig } from 'vuepress-theme-plume'
 export default defineNavbarConfig([
   { text: '首页', link: '/' },
   { text: '典藏', link: '/collection/web/navigation' },
-  { text: '小抄', link: '/cheat-sheet/' },
-  { text: '谜题', link: '/puzzle/' },
-  { text: '格言', link: '/motto/'},
-  // {
-  //   text: '笔记',
-  //   items: [{ text: '示例', link: '/demo/README.md' }]
-  // },
+  { text: '小抄', link: '/cheat-sheet/math/f-geometry-algebra' },
+  { text: '时光', link: '/moment/' },
+  { text: '趣题', link: '/puzzle/' },
+  { text: '格言', link: '/motto/' },
   { text: '关于', link: '/about/README.md'}
 ])

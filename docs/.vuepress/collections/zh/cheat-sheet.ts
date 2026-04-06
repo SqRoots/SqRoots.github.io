@@ -9,36 +9,40 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
   sidebar: [
     {
       text: '数学',
+      icon: 'mynaui:math-square',
       prefix: 'math',
       collapsed: false,
       items: [
-        'intro',
+        { text: '公式-几何代数', link: 'f-geometry-algebra', icon: 'glyphs:ruler-trinangle-duo'},
+        { text: '公式-概率统计', link: 'f-probability-statistics', icon: 'fa6-solid:dice' },
+        { text: 'LaTex', link: 'c-latex', icon: 'simple-icons:latex'},
       ],
     },
     {
       text: '计算机',
+      icon: 'boxicons:computer',
       prefix: 'computer',
       collapsed: false,
       items: [
-        'basic',
-      ],
-    },
-    {
-      text: '无线电',
-      prefix: 'ham',
-      collapsed: false,
-      items: [
-        '',
-        'shiki',
+        { text: '颜色', link: 'color', icon: 'mdi:color'},
       ],
     },
     {
       text: 'Python',
+      icon: 'lineicons:python',
       prefix: 'python',
       collapsed: false,
       items: [
-        '',
-        'shiki',
+        { text: '日期时间', link: 'date-time', icon: 'lets-icons:date-range-light'},
+      ],
+    },
+    {
+      text: '无线电',
+      icon: 'lucide:radio-tower',
+      prefix: 'ham',
+      collapsed: false,
+      items: [
+        { text: '电台-北京', link: 'radio-beijing', icon: 'heroicons:radio'},
       ],
     },
   ],

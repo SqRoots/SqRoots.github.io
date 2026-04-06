@@ -5,7 +5,7 @@ updated: 2025-10-14 22:38:31
 pageLayout: doc
 ---
 
-### 🖥️ 网站简介
+### ::mdi:id-card-outline /#1dd0fd:: 网站简介
 
 ::: info 关于网站
 目的：【社交】个人名片【记录】思考、想法、脑洞【发现】打开心灵的一扇窗
@@ -15,7 +15,7 @@ pageLayout: doc
 工具：笔记使用 [VuePress Plume](https://theme-plume.vuejs.press/) 主题。
 ::: 
 
-### 🪪 个人简介
+### ::mdi:id-card-outline /#1dd0fd:: 个人简介
 
 ![2020年夏 北戴河联峰山公园](./20200913-beidaihe-lianfengshan.jpg){width=500 style="display: flex; margin: 0 auto; border-radius:8px;"}
 
@@ -62,7 +62,7 @@ pageLayout: doc
 2025年秋，写下以上个人小传，也是第一次用文字回顾出生以来的重要经历，但寥寥数笔写不下太多，愿未来能体验更精彩的人生，同时身体安康、超越百岁！
 :::
 
-### 📒 学习履历
+### ::material-symbols:school /#1dd0fd:: 学习履历
 
 ::: info 学习经历小传
 1994年，就读于镇上的小学和初中
@@ -119,9 +119,9 @@ pageLayout: doc
   time=2014，2015，2016，2017，2018，2019，2020，2021，2022，2023，2024，2025，2026 …… type=success card=true icon=mdi:briefcase-edit placement=right
   
   2014年~今，我来到北京，从事数据分析方面的工作，喜欢分析用户和促销活动，熟悉各种数据库，部分BI工具，AI算法及相关工具。此外，我还学习了前端工程，服务器管理，Python，PHP，数据可视化，数据采集。成了一名标准的“北漂” ……
-:::
+  :::
 
-### 💼 工作履历
+### ::streamline-ultimate:work-from-home-user-pet-cat-bold /#1dd0fd:: 工作履历
 
 ::: info 工作经历小传
 自2014年来到北京，曾在多家公司就职，一直从事 ==数据分析=={.important}（商业分析）工作
@@ -168,9 +168,9 @@ pageLayout: doc
   time="3个月 2014.02 ~ 2014.04" type=success card=true icon=mdi:briefcase-edit
 
   2019年4月入职 [经管之家](https://bbs.pinggu.org/) ，从事数据分析工作，主要做网站分析、承接分析项目。
-:::
+  :::
 
-### ☎ 联系方式
+### ::entypo:old-phone /#1dd0fd:: 联系方式
 
 ::: info 联系方式
 

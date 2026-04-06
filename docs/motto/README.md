@@ -4,6 +4,7 @@ createTime: 2026/04/05 20:03:17
 pageLayout: page
 ---
 
+
 <div class="motto">
     <br/>
     <div class="motto_content"><p id="motto_content" mottoId="1" style="text-align:center;white-space:pre-wrap;">{{ displayText }}</p></div>
@@ -22,8 +23,8 @@ import { ref } from 'vue'
 import { Layout } from 'vuepress-theme-plume/client'
 
 // 定义要展示的文字（响应式数据）
-const displayText = ref('分享是人类进步的阶梯')
-const displayAuthor = ref('Loading...')
+const displayText = ref('客官别急，一大波格言正在赶来')
+const displayAuthor = ref('. . . Loading . . .')
 
 // ===== 一次性加载全部数据 =====
 let motto_list = [];
@@ -36,8 +37,8 @@ loadAllData();
 const changeText = () => {
     motto = updateMotto();
     if(motto && motto.content !== undefined && motto.author !== undefined){
-      displayText.value = motto.content || '分享是人类进步的阶梯';
-      displayAuthor.value = ("—— " + motto.author + " ——") || 'Loading...';
+      displayText.value = motto.content || '客官别急，一大波格言正在赶来';
+      displayAuthor.value = ("—— " + motto.author + " ——") || '. . . Loading . . .';
     }
 
 }
@@ -58,8 +59,8 @@ async function loadAllData() {
     // 初始化元素内容
     motto = updateMotto(url_motto_id);
     if(motto && motto.content !== undefined && motto.author !== undefined){
-      displayText.value = motto.content || '分享是人类进步的阶梯';
-      displayAuthor.value = ("—— " + motto.author + " ——") || 'Loading...'
+      displayText.value = motto.content || '客官别急，一大波格言正在赶来';
+      displayAuthor.value = ("—— " + motto.author + " ——") || '. . . Loading . . .'
     }
 }
 
@@ -80,8 +81,8 @@ function updateMotto(id) {
     // 更新 id
     document.getElementById("motto_content").setAttribute('motto-id', motto.id);
     setURLMottoID(motto.id);
-    displayText.value = motto.content || '分享是人类进步的阶梯';
-    displayAuthor.value = ("—— " + motto.author + " ——") || 'Loading...'
+    displayText.value = motto.content || '客官别急，一大波格言正在赶来';
+    displayAuthor.value = ("—— " + motto.author + " ——") || '. . . Loading . . .'
     return motto;
     // // 更新 格言内容
     // document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
@@ -158,27 +159,27 @@ function setURLMottoID(id){
         transition: all 0.3s ease;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-
+    
     /* 主按钮（深色渐变） */
     .btn-primary {
         background: #1cd0fd;
         color: #333;
         border: 1px solid #e2e8f0;
     }
-
+    
     /* 次按钮（浅色风格） */
     .btn-secondary {
         background: #ccc;
         color: #333;
         border: 1px solid #e2e8f0;
     }
-
+    
     /* 悬停动画效果 */
     .btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
-
+    
     /* 点击效果 */
     .btn:active {
         transform: translateY(0);

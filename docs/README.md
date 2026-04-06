@@ -5,13 +5,12 @@ config:
   -
     type: hero
     effect: tint-plate
-    effectConfig: 233
     full: true
     forceDark: false
     hero:
-      name: Hi~, Bro!
+      name: Hey~ Bro!
       tagline: 
-      text: 我是李宣，一个分析数据的小学生
+      text: 我是李宣，一个做数据分析的小学生
       actions:
         -
           theme: sponsor
@@ -23,7 +22,11 @@ config:
           link: /cheat-sheet/
         -
           theme: sponsor
-          text: 迷题
+          text: 时光
+          link: /moment/
+        -
+          theme: sponsor
+          text: 趣题
           link: /puzzle/
         -
           theme: sponsor
@@ -50,7 +53,7 @@ config:
       -
         title: 【地图找工作】
         icon: grommet-icons:map
-        link: /job/index.html
+        link: https://lixuan.me/job/index.html
         details: 在租房时使用过“地图找房”，感觉很方便<br>于是也做了一个Demo
       -
         title: 【Mathematica问答社区】
