@@ -5,7 +5,7 @@ updated: 2025-10-14 22:38:31
 pageLayout: doc
 ---
 
-### ::mdi:id-card-outline /#1dd0fd:: 网站简介
+### ::mingcute:web-fill /#1dd0fd:: 网站简介
 
 ::: info 关于网站
 目的：【社交】个人名片【记录】思考、想法、脑洞【发现】打开心灵的一扇窗
