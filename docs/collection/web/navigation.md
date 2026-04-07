@@ -5,11 +5,11 @@ permalink: /collection/web/navigation/
 ---
 
 <CardGrid>
-<LinkCard title="AI 网站列表" href="https://ai55.cc/" icon="mdi:web" description=""/>
-<LinkCard title="LKs 网站推荐合集" href="https://lkssite.vip/" icon="mdi:web" description=""/>
+<LinkCard title="AI 网站列表" href="https://ai55.cc/" icon="/web-favicons/ai55.cc.png" description=""/>
+<LinkCard title="LKs 网站推荐合集" href="https://lkssite.vip/" icon="/web-favicons/lkssite.vip.png" description=""/>
 <LinkCard title="果壳任意门" href="https://gate.guohere.com/" icon="mdi:web" description=""/>
-<LinkCard title="创造狮" href="https://chuangzaoshi.com/index" icon="mdi:web" description=""/>
-<LinkCard title="Rico's cheatsheets" href="https://devhints.io/" icon="mdi:web" description=""/>
+<LinkCard title="创造狮" href="https://chuangzaoshi.com/index" icon="/web-favicons/chuangzaoshi.com.png" description=""/>
+<LinkCard title="Rico's cheatsheets" href="https://devhints.io/" icon="/web-favicons/devhints.io.png" description=""/>
 </CardGrid>
 
 
