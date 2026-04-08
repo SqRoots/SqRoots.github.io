@@ -7,11 +7,11 @@
 import { defineNavbarConfig } from 'vuepress-theme-plume'
 
 export default defineNavbarConfig([
-  { text: '首页', link: '/' },
-  { text: '典藏', link: '/collection/web/navigation' },
-  { text: '小抄', link: '/cheat-sheet/math/f-geometry-algebra' },
-  { text: '时光', link: '/moment/' },
-  { text: '趣题', link: '/puzzle/' },
-  { text: '格言', link: '/motto/' },
-  { text: '关于', link: '/about/README.md'}
+  { text: '首页', link: '/', icon: 'solar:home-bold' },
+  { text: '典藏', link: '/collection/web/navigation', icon: 'mingcute:star-line' },
+  { text: '小抄', link: '/cheat-sheet/math/f-geometry-algebra', icon: 'hugeicons:note-add' },
+  { text: '时光', link: '/moment/', icon: 'mingcute:moment-line' },
+  { text: '趣题', link: '/puzzle/', icon: 'mdi:puzzle' },
+  { text: '格言', link: '/motto/', icon: 'streamline-freehand:notes-quill' },
+  { text: '关于', link: '/about/README.md', icon: 'ix:about'}
 ])
