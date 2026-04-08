@@ -7,19 +7,19 @@ permalink: /collection/web/science/
 ## 数学网站
 <CardGrid>
 <LinkCard title="3Blue1Brown" href="https://www.3blue1brown.com/" icon="/web-favicons/www.3blue1brown.com.png" description="视频用视频讲述数学问题"/>
+<LinkCard title="Tau Day" href="https://tauday.com/" icon="/web-favicons/tauday.com.png" description="建议用 τ=2π 替代圆周率 π"/>
 <LinkCard title="博士数学论坛" href="https://www.math.org.cn/" icon="/web-favicons/www.math.org.cn.png" description=""/>
 <LinkCard title="博士数学论坛新站" href="https://www.mathorg.cn/" icon="mdi:web" description=""/>
 <LinkCard title="统计之都" href="https://cos.name/" icon="/web-favicons/cos.name.png" description=""/>
 <LinkCard title="Math Over Flow" href="https://mathoverflow.net/" icon="/web-favicons/mathoverflow.net.png" description=""/>
 <LinkCard title="Math World" href="https://mathworld.wolfram.com/" icon="/web-favicons/mathworld.wolfram.com.png" description=""/>
 <LinkCard title="Mathematica 社区" href="https://community.wolfram.com/" icon="/web-favicons/community.wolfram.com.png" description=""/>
-<LinkCard title="SE" href="https://stackexchange.com/" icon="/web-favicons/stackexchange.com.png" description="Stack Exchange"/>
+<LinkCard title="SE (Stack Exchange)" href="https://stackexchange.com/" icon="/web-favicons/stackexchange.com.png" description=""/>
 <LinkCard title="Mathematica @ SE" href="https://mathematica.stackexchange.com/" icon="/web-favicons/mathematica.stackexchange.com.png" description=""/>
 <LinkCard title="Worlfram Alpha" href="https://www.wolframalpha.com/" icon="/web-favicons/www.wolframalpha.com.png" description=""/>
+<LinkCard title="Math Pages" href="https://mathpages.com/" icon="/web-favicons/mathpages.com.png" description=""/>
 <LinkCard title="Random" href="https://www.random.org/" icon="/web-favicons/www.random.org.png" description="真随机数"/>
 <LinkCard title="OEIS" href="https://oeis.org/" icon="/web-favicons/oeis.org.png" description="整数序列在线百科全书"/>
-<LinkCard title="Tau Day" href="https://tauday.com/" icon="/web-favicons/tauday.com.png" description="建议用 τ=2π 替代圆周率 π"/>
-<LinkCard title="Math Pages" href="https://mathpages.com/" icon="/web-favicons/mathpages.com.png" description=""/>
 <LinkCard title="Problem of the Week" href="https://www.math.purdue.edu/pow" icon="mdi:web" description=""/>
 </CardGrid>
 

@@ -33,7 +33,12 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'python',
       collapsed: false,
       items: [
-        { text: '日期时间', link: 'date-time', icon: 'lets-icons:date-range-light'},
+        { text: '日期时间', link: 'date-time', icon: 'lets-icons:date-range-light', items:[
+          'date-time-1-格式化',
+          'date-time-2-时区',
+          'date-time-3-星期日历表示法',
+          'date-time-4-遍历日期',
+        ]},
       ],
     },
     {
