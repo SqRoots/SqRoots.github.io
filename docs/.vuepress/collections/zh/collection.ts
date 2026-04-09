@@ -10,6 +10,12 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
   linkPrefix: '/collection/',
   sidebar: [
     {
+      text: '利器', prefix: 'tool', icon: 'ri:sword-fill', link: 'tool/'
+    },
+    {
+      text: '博客', prefix: 'blog', icon: 'fa6-solid:blog', link: 'blog/'
+    },
+    {
       text: '网站', prefix: 'web', icon: 'icon-park-twotone:web-page', items: [
         {text: '综合网站', link: 'navigation', icon: 'mynaui:navigation-one-solid'},
         {text: 'AI网站', link: 'ai', icon: 'arcticons:openai-chatgpt'},
@@ -19,17 +25,18 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
         {text: '我的网站', link: 'my-web', icon: 'stash:person-duotone'},
       ]
     },
-    {
-      text: '利器', prefix: 'tool', icon: 'ri:sword-fill', items: [
-        {text: '办公', link: 'office', icon: 'streamline-ultimate:work-from-home-user-pet-cat-bold'},
-      ]
-    },
-    {
-      text: '博客', prefix: 'blog', icon: 'fa6-solid:blog', items: [
-        {text: '数理博客', link: 'science', icon: 'boxicons:science'},
-        {text: '技术博客', link: 'technology', icon: 'ant-design:code-outlined'},
-        {text: '文字博客', link: 'writing', icon: 'fe:file-word'},
-      ]
-    }
+
+    // {
+    //   text: '利器', prefix: 'tool', icon: 'ri:sword-fill', items: [
+    //     {text: '办公', link: 'office', icon: 'streamline-ultimate:work-from-home-user-pet-cat-bold'},
+    //   ]
+    // },
+    // {
+    //   text: '博客', prefix: 'blog', icon: 'fa6-solid:blog', items: [
+    //     {text: '数理博客', link: 'science', icon: 'boxicons:science'},
+    //     {text: '技术博客', link: 'technology', icon: 'ant-design:code-outlined'},
+    //     {text: '文字博客', link: 'writing', icon: 'fe:file-word'},
+    //   ]
+    // }
   ]
 })

@@ -46,7 +46,7 @@ const changeText = () => {
 async function loadAllData() {
   try {
     const res = await fetch(
-      'https://fc-data.lixuan.xyz/motto/data.txt',
+      'https://oss1.ali.lixuan.xyz/fc--data/motto/data.txt',
       { headers: {"Content-Type": "application/json; charset=utf-8"} });
     const text = await res.text();
     motto_list = JSON.parse('['+text.trim().slice(0,-1)+']');
