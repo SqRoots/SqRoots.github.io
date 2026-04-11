@@ -9,22 +9,22 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
   sidebar: [
     {
       text: '数学',
-      icon: 'mynaui:math-square',
+      icon: 'mynaui:math-square-solid',
       prefix: 'math',
       collapsed: false,
       items: [
-        { text: '公式-几何代数', link: 'f-geometry-algebra', icon: 'glyphs:ruler-trinangle-duo'},
-        { text: '公式-概率统计', link: 'f-probability-statistics', icon: 'fa6-solid:dice' },
-        { text: 'LaTex', link: 'c-latex', icon: 'simple-icons:latex'},
+        { text: '公式-几何代数', link: 'f-geometry-algebra', icon: 'tabler:geometry'},
+        { text: '公式-概率统计', link: 'f-probability-statistics', icon: 'famicons:dice-outline' },
+        { text: 'LaTex', link: 'c-latex', icon: 'material-icon-theme:latexmk'},
       ],
     },
     {
       text: '计算机',
-      icon: 'boxicons:computer',
+      icon: 'fa7-solid:computer',
       prefix: 'computer',
       collapsed: false,
       items: [
-        { text: '颜色', link: 'color', icon: 'mdi:color'},
+        { text: '颜色', link: 'color', icon: 'ic:outline-color-lens'},
       ],
     },
     {
@@ -43,7 +43,7 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
     },
     {
       text: '无线电',
-      icon: 'lucide:radio-tower',
+      icon: 'roentgen:telescope-radio',
       prefix: 'ham',
       collapsed: false,
       items: [

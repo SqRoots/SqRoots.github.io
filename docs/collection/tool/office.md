@@ -6,7 +6,7 @@ permalink: /collection/tool/
 
 
 
-### ::mynaui:math-square-solid /#fe5a28:: 数学
+## ::mynaui:math-square-solid /#fe5a28:: 数学
 
 - <Badge type="info" text="综合" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Mathematica】](https://www.wolfram.com/) 全能数学软件，易上手，擅长符号计算
 
@@ -25,7 +25,7 @@ permalink: /collection/tool/
 
 
 
-### ::solar:password-minimalistic-input-bold /#fe5a28:: 码字
+## ::solar:password-minimalistic-input-bold /#fe5a28:: 码字
 
 - <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Typora】](https://www.typora.io/) Markdown编辑器，支持实时预览，自定义主题，文件树，目录树等
 
@@ -52,7 +52,7 @@ permalink: /collection/tool/
 
 
 
-### ::fa-solid:tools /#fe5a28:: 系统工具
+## ::fa-solid:tools /#fe5a28:: 系统工具
 
 - <Badge type="info" text="搜索" />::bi:windows /#1ccdfc::[【Listary】](https://www.listary.com/) 文件搜索与系统快捷操作辅助软件, 支持中文拼音头搜索
 
@@ -76,7 +76,7 @@ permalink: /collection/tool/
 
 
 
-### ::ic:twotone-perm-media /#fe5a28:: 视频、图片、音乐
+## ::ic:twotone-perm-media /#fe5a28:: 视频、图片、音乐
 
 - <Badge type="info" text="钢琴" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Overture】](https://sonicscores.com/overture/)专业打谱软件，可把琴谱转成mid并导入到 [Synthesia](https://www.synthesiagame.com/) 中
 
