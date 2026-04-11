@@ -31,7 +31,7 @@ permalink: /collection/blog/
 3. 要求：积极向上，时常更新。
 
 邮件内容示例：
-``` python
+``` yaml
 name: 您的姓名
 link: 网站地址
 desc: 简要描述
@@ -41,7 +41,7 @@ avatar: 头像地址
 ## ::mingcute:user-info-fill /#f76a0f::我的友链信息
 欢迎各位朋友添加友链！
 
-``` python
+``` yaml
 name: 李宣
 link: https://lixuan.me/
 desc: 一个做数据分析的小学生
