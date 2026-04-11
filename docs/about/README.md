@@ -17,7 +17,7 @@ pageLayout: doc
 
 ### ::mdi:id-card-outline /#1dd0fd:: 个人简介
 
-![2020年夏 北戴河联峰山公园](./20200913-beidaihe-lianfengshan.jpg){width=500 style="display: flex; margin: 0 auto; border-radius:8px;"}
+![2020年夏 北戴河联峰山公园](20200913-beidaihe-lianfengshan.jpg){width=500 style="display: flex; margin: 0 auto; border-radius:8px;"}
 
 <!-- 
 <ImageCard
