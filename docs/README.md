@@ -15,11 +15,11 @@ config:
         -
           theme: sponsor
           text: 精选
-          link: /collection/
+          link: /collection/web/navigation/
         -
           theme: sponsor
           text: 小抄
-          link: /cheat-sheet/
+          link: /cheat-sheet/computer/color/
         -
           theme: sponsor
           text: 时光
