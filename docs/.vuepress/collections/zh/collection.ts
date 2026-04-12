@@ -5,8 +5,8 @@ import { defineCollection } from 'vuepress-theme-plume'
 
 export const tciCollection: ThemeCollectionItem = defineCollection({
   type: 'doc',
-  title: '典藏',
-  dir: 'collection',
+  title: '精选',
+  dir: '01-精选-collection',
   linkPrefix: '/collection/',
   sidebar: [
     {
@@ -19,13 +19,13 @@ export const tciCollection: ThemeCollectionItem = defineCollection({
       text: '博客', icon: 'fa6-solid:blog', link: 'blog/'
     },
     {
-      text: '网站', prefix: 'web', icon: 'streamline-plump:web-solid', items: [
+      text: '网站', prefix: 'web', icon: 'tdesign:logo-ie-filled', items: [
         {text: '综合网站', link: 'navigation', icon: 'mingcute:navigation-line'},
-        {text: 'AI网站', link: 'ai', icon: 'arcticons:openai-chatgpt'},
+        {text: 'AI网站', link: 'ai', icon: 'bi:openai'},
         {text: '数理网站', link: 'science', icon: 'mynaui:math-square'},
-        {text: '技术网站', link: 'computer', icon: 'boxicons:computer'},
+        {text: '技术网站', link: 'technology', icon: 'boxicons:computer'},
         {text: '其他网站', link: 'other', icon: 'fluent:chess-16-regular'},
-        {text: '我的网站', link: 'my-web', icon: 'stash:person-duotone'},
+        {text: '我的网站', link: 'my-web', icon: 'icon-park-solid:me'},
       ]
     },
 

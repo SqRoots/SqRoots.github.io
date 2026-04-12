@@ -8,10 +8,10 @@ import { defineNavbarConfig } from 'vuepress-theme-plume'
 
 export default defineNavbarConfig([
   { text: '首页', link: '/', icon: 'tabler:home' },
-  { text: '典藏', link: '/collection/web/navigation', icon: 'mingcute:star-line' },
-  { text: '小抄', link: '/cheat-sheet/math/f-geometry-algebra', icon: 'hugeicons:note-01' },
+  { text: '精选', link: '/collection/web/navigation/', icon: 'mingcute:star-line' },
+  { text: '小抄', link: '/cheat-sheet/computer/color/', icon: 'hugeicons:note-01' },
   { text: '时光', link: '/moment/', icon: 'mingcute:moment-line' },
   { text: '趣题', link: '/puzzle/', icon: 'tabler:puzzle' },
   { text: '格言', link: '/motto/', icon: 'ri:quill-pen-line' },
-  { text: '关于', link: '/about/README.md', icon: 'ix:about'}
+  { text: '关于', link: '/about/index.md', icon: 'ix:about'}
 ])

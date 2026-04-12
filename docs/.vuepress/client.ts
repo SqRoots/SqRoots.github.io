@@ -6,9 +6,10 @@ import { defineClientConfig } from 'vuepress/client'
 
 // import CustomComponent from './theme/components/Custom.vue'
 import JSXGraph from './theme/components/JSXGraph.vue'
+import AIModels from './theme/components/AIModels.vue'
 
 // import './theme/styles/custom.css'
-import './styles/index.css'
+import './theme/styles/my-custom.css'
 
 export default defineClientConfig({
   enhance({ app }) {
@@ -21,5 +22,6 @@ export default defineClientConfig({
     // your custom components
     // app.component('CustomComponent', CustomComponent)
     app.component('JSXGraph', JSXGraph)
+    app.component('AIModels', AIModels)
   },
 })

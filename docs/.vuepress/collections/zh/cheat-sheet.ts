@@ -4,7 +4,7 @@ import { defineCollection } from 'vuepress-theme-plume'
 export const tciCheatSheet: ThemeCollectionItem = defineCollection({
   type: 'doc',
   title: '小抄',
-  dir: 'cheat-sheet',
+  dir: '02-小抄-cheat-sheet',
   linkPrefix: '/cheat-sheet/',
   sidebar: [
     {

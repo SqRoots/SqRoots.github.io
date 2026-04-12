@@ -14,7 +14,7 @@ config:
       actions:
         -
           theme: sponsor
-          text: 典藏
+          text: 精选
           link: /collection/
         -
           theme: sponsor
