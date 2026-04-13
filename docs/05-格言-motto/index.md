@@ -134,8 +134,19 @@ function setURLMottoID(id){
 
 <style scoped>
 .motto{
-        text-align: center;
-    }
+  text-align: center;
+}
+
+:deep(.vp-page) {
+  min-height: calc(100vh - var(--vp-nav-height, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:deep(.vp-page) .motto {
+  transform: translateY(12px);
+}
 
 .motto_content {
   min-height: 200px;
