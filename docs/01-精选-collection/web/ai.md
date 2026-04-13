@@ -94,20 +94,20 @@ tools: # 工具
 
 
 
-## 大模型在线应用
+## ::basil:app-store-solid /#f76a0f::大模型在线应用
 
 AI 模型网页版对话应用，通常免费使用
 
 <AIModels :list="$frontmatter.chat" />
 
 
-## 模型服务商
+## ::ant-design:api-filled /#f76a0f::模型服务商
 
 通过 AI 服务商提供的 访问接口 和 API KEY，获得模型的访问权限
 
 <AIModels :list="$frontmatter.providers" />
 
-## AI 工具
+## ::fa-solid:tools /#f76a0f::AI 工具
 
 请个AI员工吧
 

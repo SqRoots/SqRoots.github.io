@@ -4,7 +4,7 @@ createTime: 2026-04-12 14:39:22
 permalink: /collection/web/my-web/
 ---
 
-### ::solar-home-bold-duotone:: 我的网站
+### ::solar-home-bold-duotone /#f76a0f::我的网站
 
 <CardGrid>
   <LinkCard title="主页" href="https://lixuan.xyz/" icon="solar:home-bold"/>

@@ -4,7 +4,7 @@ createTime: 2026-04-12 14:39:22
 permalink: /collection/web/technology/
 ---
 
-## 天文、航天、航空
+## ::material-symbols:satellite-alt /#f76a0f::天文、航天、航空
 
 <CardGrid>
 <LinkCard title="中国载人航天" href="https://www.cmse.gov.cn/gfgg/zgkjzgdcs/" icon="/images/web-favicons/www.cmse.gov.cn.png" description=""/>
@@ -16,7 +16,7 @@ permalink: /collection/web/technology/
 <LinkCard title="Satellite Tracker 3D" href="https://satellitetracker3d.com/" icon="/images/web-favicons/satellitetracker3d.com.png" description=""/>
 </CardGrid>
 
-## 无线电
+## ::roentgen:telescope-radio /#f76a0f::无线电
 
 <CardGrid>
 <LinkCard title="RAC" href="http://www.rachina.org.cn/" icon="/images/web-favicons/rachina.org.cn.png" description="中国无线电协会"/>

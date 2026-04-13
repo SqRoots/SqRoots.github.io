@@ -7,6 +7,7 @@ import { defineClientConfig } from 'vuepress/client'
 // import CustomComponent from './theme/components/Custom.vue'
 import JSXGraph from './theme/components/JSXGraph.vue'
 import AIModels from './theme/components/AIModels.vue'
+import FriendLinks from './theme/components/FriendLinks.vue'
 
 // import './theme/styles/custom.css'
 import './theme/styles/my-custom.css'
@@ -23,5 +24,6 @@ export default defineClientConfig({
     // app.component('CustomComponent', CustomComponent)
     app.component('JSXGraph', JSXGraph)
     app.component('AIModels', AIModels)
+    app.component('FriendLinks', FriendLinks)
   },
 })
