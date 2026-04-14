@@ -13,5 +13,10 @@ export default defineNavbarConfig([
   { text: '时光', link: '/moment/', icon: 'mingcute:moment-line' },
   { text: '趣题', link: '/puzzle/', icon: 'tabler:puzzle' },
   { text: '格言', link: '/motto/', icon: 'ri:quill-pen-line' },
-  { text: '关于', link: '/about/index.md', icon: 'ix:about'}
+  { text: '关于', icon: 'ix:about', items:[
+    { text: '关于我', link: '/about/index.md', icon: 'mdi:id-card-outline'},
+    { text: '旧博客', link: 'https://blog.lixuan.xyz/', icon: 'fa7-solid:blog'},
+    { text: '旧笔记', link: 'https://note.lixuan.xyz/', icon: 'clarity:note-line'},
+    { text: '旧摄影', link: 'https://photo.lixuan.xyz/', icon: 'material-symbols:add-a-photo-outline'},
+  ]}
 ])

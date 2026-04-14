@@ -13,7 +13,7 @@ permalink: /cheat-sheet/math/ab/
 
 ### 1.2 实验后工具
 
-用于实验后计算**显著性、置信区间、效应量、MDE** 的 Excel 文件：<ActionButton text="AB实验小工具_实验后工具_v1.4.xlsx" color="green" icon="vscode-icons:file-type-excel" url="/downloads/AB实验小工具_实验后工具_v1.4.xlsx" />
+用于实验后计算**显著性、置信区间、效应量、MDE** 的 Excel 工具：<ActionButton text="AB实验小工具_v1.4.xlsx" color="green" icon="vscode-icons:file-type-excel" url="/downloads/AB实验小工具_v1.4.xlsx" />
 
 
 todo: 补充其他程序语言的计算代码
