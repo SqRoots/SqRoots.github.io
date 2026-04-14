@@ -5,3 +5,8 @@ footer.vp-footer div.container div.message{
 footer.vp-footer div.container div.message>a{
     color: rgba(0,0,0,0.2);
 }
+
+.vp-doc img{
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}

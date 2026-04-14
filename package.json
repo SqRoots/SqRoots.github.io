@@ -31,6 +31,8 @@
     "node": "^20.19.0 || >=22.0.0"
   },
   "dependencies": {
+    "@mathjax/src": "^4.1.1",
+    "mathjax-full": "^3.2.2",
     "pinyin-pro": "^3.28.0"
   }
 }
