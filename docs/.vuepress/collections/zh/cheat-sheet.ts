@@ -13,10 +13,10 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'math',
       collapsed: false,
       items: [
-        { text: '公式-几何代数', link: 'geometry-algebra', icon: 'tabler:geometry'},
-        { text: '公式-概率统计', link: 'probability-statistics', icon: 'famicons:dice-outline' },
-        { text: 'LaTex', link: 'latex', icon: 'material-icon-theme:latexmk'},
-        { text: 'AB实验常用工具与公式', link: '2024-01-07_AB测试中的常用工具与数学公式/index', icon: 'fluent-emoji-high-contrast:ab-button-blood-type'},
+        { text: 'AB实验工具与公式', link: '2024-01-07_AB测试中的常用工具与数学公式/index', icon: 'fluent-emoji-high-contrast:ab-button-blood-type'},
+        { text: 'LaTex数学公式', link: 'latex', icon: 'material-icon-theme:latexmk'},
+        { text: '几何代数', link: 'geometry-algebra', icon: 'tabler:geometry'},
+        { text: '概率统计', link: 'probability-statistics', icon: 'famicons:dice-outline' },
       ],
     },
     {
