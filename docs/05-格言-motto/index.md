@@ -73,7 +73,7 @@ function updateMotto(id) {
       // 随机抽取一条格言
       let old_id = document.getElementById("motto_content").mottoId || 1;
       let new_id = getRandomInt(n, old_id);
-      motto = getMottoByIndex(new_id);
+      motto = getMottoByID(new_id);
     } else {
       // 按id取格言
       motto = getMottoByID(id)
@@ -104,9 +104,9 @@ function getMottoByID(id){
   }
 }
 // 按序号取格言
-function getMottoByIndex(i){
-  return motto_list[i]
-}
+// function getMottoByIndex(i){
+//   return motto_list[i]
+// }
 // 随机整数，需要与老
 function getRandomInt(max, old_id) {
   let new_id = old_id;

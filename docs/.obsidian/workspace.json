@@ -11,10 +11,14 @@
             "id": "0cba86cdaf441df1",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "02-小抄-cheat-sheet/math/2024-01-07_AB测试中的常用工具与数学公式/index.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "index"
             }
           }
         ]
@@ -182,6 +186,7 @@
   },
   "active": "0cba86cdaf441df1",
   "lastOpenFiles": [
+    "99-关于-about/index.md",
     "01-精选-collection/blog.md",
     "01-精选-collection/index.md",
     "01-精选-collection/web/technology.md",
@@ -217,7 +222,6 @@
     "02-小抄-cheat-sheet/computer",
     "03-时光-moment/README.md",
     "05-格言-motto/index.md",
-    "04-趣题-puzzle/求矩形面积.md",
     "99-关于-about/assets/20200913-beidaihe-lianfengshan.jpg",
     "99-关于/assets/20200913-beidaihe-lianfengshan.jpg",
     "关于/assets/20200913-beidaihe-lianfengshan.jpg",
