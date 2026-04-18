@@ -1,16 +1,15 @@
 ---
-title: 星期日历表示法
+title: ・星期日历表示法
 createTime: 2026/04/05 22:00:00
 permalink: /cheat-sheet/python/date-time-calendar/
 ---
 
-## 一、说明
+## 1️⃣ 测试结论
 测试以下4种包的星期日历表示法是否一致 `arrow`, `pandas`, `datetime`, `time`，结论：
 - 正常的：arrow, pandas, datetime
 - 不同的：time（出现了W00，默认周日=0）
 
-## 二、测试
-### 2.1 测试结果
+## 2️⃣ 测试过程
 
 表：输出结果（df）
 
@@ -28,7 +27,7 @@ permalink: /cheat-sheet/python/date-time-calendar/
 |    9 | 2026-01-05 | 2026-W02-1 | 2026-W02-1 | 2026-W02-1 | 2026-W01-1   |
 |   10 | 2026-01-06 | 2026-W02-2 | 2026-W02-2 | 2026-W02-2 | 2026-W01-2   |
 
-### 2.2 测试代码
+测试代码：
 
 ``` python title="测试不同包的结果是否一致"
 import time

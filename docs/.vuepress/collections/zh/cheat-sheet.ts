@@ -13,10 +13,10 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'math',
       collapsed: false,
       items: [
-        { text: 'AB实验工具与公式', link: '2024-01-07_AB测试中的常用工具与数学公式/index', icon: 'fluent-emoji-high-contrast:ab-button-blood-type'},
-        { text: 'LaTex数学公式', link: 'latex', icon: 'material-icon-theme:latexmk'},
-        { text: '几何代数', link: 'geometry-algebra', icon: 'tabler:geometry'},
-        { text: '概率统计', link: 'probability-statistics', icon: 'famicons:dice-outline' },
+        { text: 'AB实验工具与公式', link: '2024-01-07_AB测试中的常用工具与数学公式/index.md', icon: 'fluent-emoji-high-contrast:ab-button-blood-type'},
+        { text: 'LaTex数学公式', link: 'latex.md', icon: 'material-icon-theme:latexmk'},
+        { text: '几何代数', link: 'geometry-algebra.md', icon: 'tabler:geometry'},
+        { text: '概率统计', link: 'probability-statistics.md', icon: 'famicons:dice-outline' },
       ],
     },
     {
@@ -25,7 +25,7 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'computer',
       collapsed: false,
       items: [
-        { text: '颜色', link: 'color', icon: 'ic:outline-color-lens'},
+        { text: '颜色', link: 'color.md', icon: 'ic:outline-color-lens'},
       ],
     },
     {
@@ -34,11 +34,11 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'python',
       collapsed: false,
       items: [
-        { text: '日期时间', link: 'date-time', icon: 'lets-icons:date-range-light', items:[
-          'date-time-1-格式化',
-          'date-time-2-时区',
-          'date-time-3-星期日历表示法',
-          'date-time-4-遍历日期',
+        { text: '日期时间', link: 'date-time.md', icon: 'lets-icons:date-range-light', items:[
+          'date-time-1-常用命令.md',
+          'date-time-2-时区.md',
+          'date-time-3-星期日历表示法.md',
+          'date-time-4-农历.md',
         ]},
       ],
     },
@@ -48,7 +48,7 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'ham',
       collapsed: false,
       items: [
-        { text: '电台-北京', link: 'radio-beijing', icon: 'heroicons:radio'},
+        { text: '电台-北京', link: 'radio-beijing.md', icon: 'heroicons:radio'},
       ],
     },
   ],

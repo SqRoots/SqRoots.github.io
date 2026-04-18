@@ -1,11 +1,18 @@
 ---
-title: 常用命令
+title: ・常用命令
 createTime: 2026/04/05 22:00:00
 permalink: /cheat-sheet/python/date-time-formate/
 ---
 
-## 一、常用命令
-### 1.1 获取当前时间
+## 1️⃣ 安装 arrow
+
+在 Python 里格式化日期和时间，经常会遇到意想不到的问题，比如 `星期日历表示法`。在网上找了一些方法，最后选择使用 `arrow` 包来处理日期和时间。
+
+- 安装：`pip install -U arrow`
+- 文档：[官方文档](https://arrow.readthedocs.io/en/latest/index.html)
+
+
+## 2️⃣ 获取当前时间
 ``` python title="获取当前所在时区的时间（arrow对象）"
 # 以下4种方式都可以获取当前北京的时间
 local0 = arrow.now()			             # 在东8区运行，默认是local
@@ -25,15 +32,17 @@ for i, v in enumerate([local0,local1,local2,local3,local4]):
 # 4 1775659832 2026-04-08 22:50:32+08:00
 ```
 
-### 1.2 字符串→时间
+## 3️⃣ 字符串|时间戳→时间
 ``` python title="把字符串转化为时间（arrow对象）"
 date_time1 = arrow.get('2013-05-11')
 date_time2 = arrow.get('2013-05-11 21:23:58')
 date_time3 = arrow.get('2013-05-11 21:23:58+08:00')	 # 比date_time2小8*3600秒
 date_time4 = arrow.get('2013-05-11T21:23:58.970460+08:00')
+
+date_time5 = arrow.get(1767268800)
 ```
 
-### 1.3 时间→字符串
+## 4️⃣ 时间→字符串
 ``` python title="把时间（arrow对象）转化为字符串"
 date_time3.format()                          # '2013-05-11 21:23:58+08:00'
 date_time3.format('YYYY-MM-DD HH:mm:ss ZZ')  # '2013-05-11 21:23:58 +08:00'
@@ -41,11 +50,12 @@ date_time3.humanize()                        # '12 years ago'
 date_time3.humanize(locale='zh-cn')          # '12年前'
 ```
 
-### 1.4 时间→时间戳
+## 5️⃣ 时间→时间戳
 ``` python title="把时间（arrow对象）转化为时间戳"
 date_time3.timestamp()
 ```
 
+## 6️⃣ 时间加减
 ``` python title="加减时间"
 date_time3.shift(years=1, months=-2, days=-3,         # 年月日
                  weeks=10,                            # 周
@@ -53,7 +63,7 @@ date_time3.shift(years=1, months=-2, days=-3,         # 年月日
                  )
 ```
 
-### 1.5 月初月末，周初周末
+## 7️⃣ 月初月末，周初周末
 ``` python title="月初月末，周初周末"
 # 月初，月末
 arrow.now().floor('month').format('YYYY-MM-DD')
@@ -67,6 +77,39 @@ arrow.now().ceil('week').format('YYYY-MM-DD')
 arrow.now().floor('week').shift(days=-1).format('YYYY-MM-DD')
 arrow.now().ceil('week').shift(days=-1).format('YYYY-MM-DD')
 ```
+
+## 8️⃣ 遍历日期
+
+遍历时可以使用的单位（frame）：`year`, `month`, `day`, `hour`, `minute`, `second`, `microsecond`, `week`, `quarter`，也可以在单位后面加上`s`（`years`, `months`, `days`, `hours`, `minutes`, `seconds`, `microseconds`, `weeks`, `quarters`）。
+
+``` python title="range 遍历值"
+start = datetime(2013, 5, 5, 12, 30)
+end = datetime(2013, 5, 5, 17, 15)
+for r in arrow.Arrow.range('hour', start, end):
+    print(repr(r))
+
+# 输出：
+# <Arrow [2013-05-05T12:30:00+00:00]>
+# <Arrow [2013-05-05T13:30:00+00:00]>
+# <Arrow [2013-05-05T14:30:00+00:00]>
+# <Arrow [2013-05-05T15:30:00+00:00]>
+# <Arrow [2013-05-05T16:30:00+00:00]>
+```
+
+``` python title="span_range 遍历区间"
+start = datetime(2013, 5, 5, 12, 30)
+end = datetime(2013, 5, 5, 17, 15)
+for r in arrow.Arrow.span_range('hour', start, end):
+    print(r)
+# 输出：
+# (<Arrow [2013-05-05T12:00:00+00:00]>, <Arrow [2013-05-05T12:59:59.999999+00:00]>)
+# (<Arrow [2013-05-05T13:00:00+00:00]>, <Arrow [2013-05-05T13:59:59.999999+00:00]>)
+# (<Arrow [2013-05-05T14:00:00+00:00]>, <Arrow [2013-05-05T14:59:59.999999+00:00]>)
+# (<Arrow [2013-05-05T15:00:00+00:00]>, <Arrow [2013-05-05T15:59:59.999999+00:00]>)
+# (<Arrow [2013-05-05T16:00:00+00:00]>, <Arrow [2013-05-05T16:59:59.999999+00:00]>)
+# (<Arrow [2013-05-05T17:00:00+00:00]>, <Arrow [2013-05-05T17:59:59.999999+00:00]>)
+```
+
 
 ## 附录：每种字母的含义
 
