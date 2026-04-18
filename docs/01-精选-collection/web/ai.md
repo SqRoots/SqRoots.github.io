@@ -90,6 +90,9 @@ tools: # 工具
   - name: Hermes Agent
     logo: /images/ai/hermes-agent.nousresearch.com.png
     url: https://hermes-agent.nousresearch.com/
+  - name: Ollama
+    logo: /images/ai/providers/ollama.png
+    url: https://ollama.com/
 ---
 
 
