@@ -48,7 +48,7 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       prefix: 'ham',
       collapsed: false,
       items: [
-        { text: '电台-北京', link: 'radio-beijing.md', icon: 'heroicons:radio'},
+        { text: '广播电台-北京', link: 'radio-beijing.md', icon: 'heroicons:radio'},
       ],
     },
   ],
