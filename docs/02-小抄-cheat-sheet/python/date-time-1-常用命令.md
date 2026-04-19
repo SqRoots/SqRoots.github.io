@@ -6,7 +6,7 @@ permalink: /cheat-sheet/python/date-time-formate/
 
 ## 1️⃣ 安装 arrow
 
-在 Python 里格式化日期和时间，经常会遇到意想不到的问题，比如 `星期日历表示法`。在网上找了一些方法，最后选择使用 `arrow` 包来处理日期和时间。
+在 Python 中使用 `arrow` 包来处理日期和时间比内建包好用很多，同时也能避遇到诸如 `星期日历表示法` 不一致的问题。
 
 - 安装：`pip install -U arrow`
 - 文档：[官方文档](https://arrow.readthedocs.io/en/latest/index.html)
