@@ -1,13 +1,15 @@
 ---
 title: 正方形内单位正方形的装填
 createTime: 2026-04-19 22:58:35
-cover: ./assets/s5.gif
-permalink: /puzzle/001/
+cover: /covers/puzzle-0001.gif
+permalink: /puzzle/0001/
 ---
 
 ::: tip 问题
 把 $n$ 个单位正方形，不重叠地摆放到一个大正方形中，如何摆放可以使得大正方形最小（边长记为 $s(n)$）？
 :::
+
+<!-- more -->
 
 **示例**：
 
