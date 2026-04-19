@@ -64,6 +64,11 @@ permalink: /to/your-custom-url/
 />
 ```
 
+### 1.3 自定义插件
+
+| 功能                                          | 插件                   |
+| --------------------------------------------- | ---------------------- |
+| AI生成的，支持frontmater中的cover使用相对路径 | relativeCoverPlugin.ts |
 
 ## 二、主题说明
 
@@ -83,7 +88,7 @@ pnpm docs:build
 # 本地预览生产服务
 pnpm docs:preview
 # 更新 vuepress 和主题
-pnpm vp-update
+pnpm dlx vp-update
 ```
 
 ### 2.3 部署到 GitHub Pages
