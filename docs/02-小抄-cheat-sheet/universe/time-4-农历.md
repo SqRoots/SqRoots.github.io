@@ -2,7 +2,7 @@
 
 title: ・农历
 createTime: 2026-04-18 23:09:22
-permalink: /cheat-sheet/python/date-time-lunar/
+permalink: /cheat-sheet/universe/time/lunar/
 ---
 
 ## 1️⃣ 农历简介

@@ -1,7 +1,7 @@
 ---
 title: ・星期日历表示法
 createTime: 2026/04/05 22:00:00
-permalink: /cheat-sheet/python/date-time-calendar/
+permalink: /cheat-sheet/universe/time/calendar/
 ---
 
 ## 1️⃣ 什么是星期日历表示法

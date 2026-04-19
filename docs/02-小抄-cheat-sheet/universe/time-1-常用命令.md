@@ -1,7 +1,7 @@
 ---
 title: ・常用命令
 createTime: 2026/04/05 22:00:00
-permalink: /cheat-sheet/python/date-time-formate/
+permalink: /cheat-sheet/universe/time/formate/
 ---
 
 ## 1️⃣ 安装 arrow
