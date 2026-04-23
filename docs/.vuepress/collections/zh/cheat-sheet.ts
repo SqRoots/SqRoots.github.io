@@ -15,8 +15,8 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
       items: [
         { text: 'AB实验工具与公式', link: '2024-01-07_AB测试中的常用工具与数学公式/index.md', icon: 'fluent-emoji-high-contrast:ab-button-blood-type'},
         { text: 'LaTex数学公式', link: 'latex.md', icon: 'material-icon-theme:latexmk'},
-        { text: '几何代数（草稿）', link: 'geometry-algebra.md', icon: 'tabler:geometry'},
-        { text: '概率统计（草稿）', link: 'probability-statistics.md', icon: 'famicons:dice-outline' },
+        // { text: '几何代数（草稿）', link: 'geometry-algebra.md', icon: 'tabler:geometry'},
+        // { text: '概率统计（草稿）', link: 'probability-statistics.md', icon: 'famicons:dice-outline' },
       ],
     },
     {
