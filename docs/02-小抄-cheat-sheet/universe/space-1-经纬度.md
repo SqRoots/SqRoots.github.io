@@ -104,6 +104,25 @@ print(f"distance        = {distance_m:.2f} m")
 |  0   |  88  |            38.98             |           1116.93            |
 |  0   |  89  |            19.49             |           1116.94            |
 
+```python title="计算不同纬度偏移距离" :collapsed-lines
+from pyproj import Geod
+import numpy as np
+
+rs = []
+geod = Geod(ellps="WGS84")
+lat = np.arange(0,90,1)
+lon = 0 * np.arange(0,90,1)
+
+for lon, lat in zip(lon,lat): 
+    az12, az21, distance_m1 = geod.inv(lon, lat, lon + 0.01, lat)
+    az12, az21, distance_m2 = geod.inv(lon, lat, lon, lat + 0.01)
+    r = [lon, lat, distance_m1, distance_m2]
+    print(f'{r[0]:.0f}\t{r[1]:.0f}\t{r[2]:.2f}\t{r[3]:.2f}')
+    rs.append(r)
+```
+
+
+
 #### 3.3 路径规划(todo)
 
 
