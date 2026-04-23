@@ -104,7 +104,7 @@ print(f"distance        = {distance_m:.2f} m")
 |  0   |  88  |            38.98             |           1116.93            |
 |  0   |  89  |            19.49             |           1116.94            |
 
-```python title="计算不同纬度偏移距离" :collapsed-lines
+```python title="计算不同纬度偏移距离" :collapsed-lines=1
 from pyproj import Geod
 import numpy as np
 
