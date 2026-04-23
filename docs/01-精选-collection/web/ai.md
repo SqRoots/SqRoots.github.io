@@ -93,6 +93,12 @@ tools: # 工具
   - name: Ollama
     logo: /images/ai/providers/ollama.png
     url: https://ollama.com/
+  - name: Agent Skills Marketplace
+    logo: /images/ai/skillsmp.com.png
+    url: https://skillsmp.com.png/
+  - name: Skill Hub
+    logo: /images/ai/skillhub.cn.png
+    url: https://skillhub.cn/
 ---
 
 
