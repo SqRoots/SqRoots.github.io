@@ -42,7 +42,7 @@ export const tciCheatSheet: ThemeCollectionItem = defineCollection({
         ]},
         { text: '空间', link: 'space-0-介绍.md', icon: 'icon-park-outline:earth', items:[
           'space-1-经纬度.md',
-          'space-2-GeoHash.md',
+          {text: '・GeoHash', link: 'space-2-GeoHash/index.md'},
         ]},
       ],
     },
