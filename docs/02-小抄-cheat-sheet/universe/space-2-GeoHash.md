@@ -244,15 +244,75 @@ GeoHash 更像“数据库友好的前缀编码”，S2 更像“几何能力很
 - **S2**：把地球表面切成**层级四边形单元**，强调**球面几何与空间索引。**
 - **H3**：把地球表面切成**层级六边形为主的网格**，强调**邻域/网格算法**。
 
-### 7️⃣ 计算工具
+### 7️⃣ 常用命令
 
 
+```python title=常用包
+python -m pip install geopandas pyproj shapely pygeohash geolib
+```
 
-#### 1）经纬度→GeoHash
+::: tip 在不同包中，经纬度顺序不同
+1. geopy 常见写法：(lat, lon)
+2. pyproj 常见写法：(lon, lat)
+3. shapely.Point(x, y)：通常理解成 (lon, lat)
+4. 精确半径查询，需要查询目标 GeoHash 及其周边的 8 个 GeoHash
+:::
 
-#### 2）GeoHash→经纬度
 
-#### 3）GeoHash周边的8个邻居
+```python title="使用 geolib 计算 GeoHash"
+# pip install geolib
+from geolib import geohash
 
-#### 4）精确半径查询
+# 经纬度→GeoHash
+lat, lon = 1.2834, 103.8607
 
+geohash.encode(lat, lon, precision=8)
+
+# GeoHash→经纬度
+geohash.decode(geohash)
+
+# GeoHash周边的8个邻居
+# retuns a namedtuple (n, ne, e, se, s, sw, w, nw)
+geohash.neighbours(geohash) 
+
+
+# 计算GeoHash的顶点（西南角+东北角）
+# returns a namedtuple ((sw_lat, sw_lon), ((ne_lat, ne_lon))
+geohash.bounds(geohash)
+
+# 计算指定方向的相邻GeoHash
+geohash.adjacent(geohash, direction)
+```
+
+
+```python title="使用 pygeohash 计算 GeoHash"
+import pygeohash as pgh
+
+lat, lon = 1.2834, 103.8607
+
+# 编码
+geohash_code = pgh.encode(lat, lon, precision=8)
+print("geohash =", geohash_code)
+
+# 解码：返回中心点
+decoded_lat, decoded_lon = pgh.decode(geohash_code)
+print("decoded center =", decoded_lat, decoded_lon)
+
+# 解码成 bounding box
+bbox = pgh.decode_exactly(geohash_code)
+print("decode_exactly =", bbox)
+# 一般会包含:
+# (lat, lon, lat_error, lon_error)
+
+
+points = [
+    ("A", 1.2834, 103.8607),
+    ("B", 1.2835, 103.8608),
+    ("C", 1.3644, 103.9915),
+]
+
+for name, lat, lon in points:
+    code = pgh.encode(lat, lon, precision=6)
+    print(name, code)
+
+```
