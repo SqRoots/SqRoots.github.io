@@ -8,7 +8,7 @@ permalink: /collection/web/science/
 <CardGrid>
 <LinkCard title="3Blue1Brown" href="https://www.3blue1brown.com/" icon="/images/web-favicons/www.3blue1brown.com.png" description="视频用视频讲述数学问题"/>
 <LinkCard title="Tau Day" href="https://tauday.com/" icon="/images/web-favicons/tauday.com.png" description="建议用 τ=2π 替代圆周率 π"/>
-<LinkCard title="Erdős 题集" href="https://www.erdosproblems.com/lists" icon="/images/web-favicons/erdosproblems.com.png" description="[保罗・埃尔德什]数学问题开源数据库"/>
+<LinkCard title="Erdős 题集" href="https://www.erdosproblems.com/lists" icon="/images/web-favicons/erdosproblems.com.png" description="[保罗・埃尔德什]数学题库：共1217道，已解决4成+"/>
 <LinkCard title="LEAN 语言" href="https://lean-lang.org/" icon="/images/web-favicons/lean-lang.org.png" description="数学问题的形式化证明语言"/>
 <LinkCard title="博士数学论坛" href="https://www.math.org.cn/" icon="/images/web-favicons/www.math.org.cn.png" description=""/>
 <LinkCard title="博士数学论坛新站" href="https://www.mathorg.cn/" icon="mdi:web" description=""/>
