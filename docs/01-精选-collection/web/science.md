@@ -8,9 +8,10 @@ permalink: /collection/web/science/
 <CardGrid>
 <LinkCard title="3Blue1Brown" href="https://www.3blue1brown.com/" icon="/images/web-favicons/www.3blue1brown.com.png" description="视频用视频讲述数学问题"/>
 <LinkCard title="Tau Day" href="https://tauday.com/" icon="/images/web-favicons/tauday.com.png" description="建议用 τ=2π 替代圆周率 π"/>
-<LinkCard title="Erdős 题集" href="https://www.erdosproblems.com/lists" icon="/images/web-favicons/erdosproblems.com.png" description="[保罗・埃尔德什]数学题库：共1217道，已解决4成+"/>
+<LinkCard title="Erdős 数学题库" href="https://www.erdosproblems.com/lists" icon="/images/web-favicons/erdosproblems.com.png" description="埃尔德什 题库：共1217道，已解决40%+"/>
+<LinkCard title="AI解决的 Erdős 问题" href="https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems" icon="mdi:github" description="AI解决的 埃尔德什 数学问题"/>
 <LinkCard title="LEAN 语言" href="https://lean-lang.org/" icon="/images/web-favicons/lean-lang.org.png" description="数学问题的形式化证明语言"/>
-<LinkCard title="博士数学论坛" href="https://www.math.org.cn/" icon="/images/web-favicons/www.math.org.cn.png" description=""/>
+<LinkCard title="博士数学论坛" href="https://www.math.org.cn/" icon="/images/web-favicons/www.math.org.cn.png" description="已不再维护"/>
 <LinkCard title="博士数学论坛新站" href="https://www.mathorg.cn/" icon="mdi:web" description=""/>
 <LinkCard title="统计之都" href="https://cos.name/" icon="/images/web-favicons/cos.name.png" description=""/>
 <LinkCard title="Math Over Flow" href="https://mathoverflow.net/" icon="/images/web-favicons/mathoverflow.net.png" description=""/>
@@ -19,7 +20,7 @@ permalink: /collection/web/science/
 <LinkCard title="SE (Stack Exchange)" href="https://stackexchange.com/" icon="/images/web-favicons/stackexchange.com.png" description=""/>
 <LinkCard title="Mathematica @ SE" href="https://mathematica.stackexchange.com/" icon="/images/web-favicons/mathematica.stackexchange.com.png" description=""/>
 <LinkCard title="Worlfram Alpha" href="https://www.wolframalpha.com/" icon="/images/web-favicons/www.wolframalpha.com.png" description=""/>
-<LinkCard title="Math Pages" href="https://mathpages.com/" icon="/images/web-favicons/mathpages.com.png" description=""/>
+<LinkCard title="Math Pages" href="https://mathpages.com/" icon="/images/web-favicons/mathpages.com.png" description="数学与物理科普"/>
 <LinkCard title="Random" href="https://www.random.org/" icon="/images/web-favicons/www.random.org.png" description="真随机数"/>
 <LinkCard title="OEIS" href="https://oeis.org/" icon="/images/web-favicons/oeis.org.png" description="整数序列在线百科全书"/>
 <LinkCard title="Problem of the Week" href="https://www.math.purdue.edu/pow" icon="mdi:web" description=""/>
