@@ -45,6 +45,10 @@ chat: # AI 应用，模型在线对话
     border: true
 
 providers: # AI 服务商
+  - name: OpenRouter
+    logo: /images/ai/openrouter.ai.svg
+    url: https://openrouter.ai/
+    border: true
   - name: OpenAI
     logo: /images/ai/providers/openai.jpeg
     url: https://openai.com/
