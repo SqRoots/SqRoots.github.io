@@ -17,4 +17,5 @@ permalink: /collection/web/other/
 <LinkCard title="Cheat Sheets" href="https://cheatography.com/" icon="/images/web-favicons/cheatography.com.png" description=""/>
 <LinkCard title="花粉过敏指数" href="https://www.weather.com.cn/forecast/hf_index.shtml?id=101010100" icon="/images/web-favicons/www.weather.com.cn.png" description=""/>
 <LinkCard title="Blade Icons" href="https://blade-ui-kit.com/blade-icons" icon="/images/web-favicons/blade-ui-kit.com.png" description=""/>
+<LinkCard title="Iconify Icons" href="https://icon-sets.iconify.design/" icon="/images/web-favicons/icon-sets.iconify.design.svg" description=""/>
 </CardGrid>
