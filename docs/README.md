@@ -20,10 +20,14 @@ config:
           theme: sponsor
           text: 小抄
           link: /cheat-sheet/computer/color/
+        # -
+        #   theme: sponsor
+        #   text: 时光
+        #   link: /moment/
         -
           theme: sponsor
-          text: 时光
-          link: /moment/
+          text: 博客
+          link: https://blog.lixuan.xyz/
         -
           theme: sponsor
           text: 趣题

@@ -4,6 +4,17 @@ createTime: 2026-04-09 22:45:52
 permalink: /collection/tool/
 ---
 
+## ::streamline-ultimate-color:office-desk-2 /#fe5a28:: 学习
+
+- <Badge type="info" text="外语" />::logos:chrome::::mdi:cellphone /#1ccdfc::[【Relingo】](https://relingo.net/) 是一款 AI 驱动的外语学习工具（浏览器插件 + 手机 App），核心是 “上网即背词”，在浏览外文网页、看视频时自动高亮生词、翻译并生成个性化生词本，主打无痛积累词汇
+
+- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Typora】](https://www.typora.io/) Markdown编辑器，支持实时预览，自定义主题，文件树，目录树等
+
+- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Obsidian】](https://obsidian.md/) 是一款以本地 Markdown 文件为核心的个人知识管理与笔记工具，免费，双向链接 + 图谱。扩展性极强，提供丰富的主题、插件（例如 AI 插件：Copilot，Text Generator）
+
+- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Logseq】](https://logseq.com/) 是一款以结构化大纲和块级链接为特色的笔记软件，兼容Markdown 与 Org-mode，文件按日期和页面自动组织，对于阅读和标注 PDF 文件更友好。内置 Git 同步、查询、任务管理，虽然插件较少但核心功能开箱即用
+
+- <Badge type="tip" text="记忆" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【AnkiDroid】](https://apps.ankiweb.net/) 以卡片的方式记忆知识碎片, 记忆卡片
 
 
 ## ::mynaui:math-square-solid /#fe5a28:: 数学
@@ -27,13 +38,9 @@ permalink: /collection/tool/
 
 ## ::solar:password-minimalistic-input-bold /#fe5a28:: 码字
 
-- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Typora】](https://www.typora.io/) Markdown编辑器，支持实时预览，自定义主题，文件树，目录树等
-
-- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Obsidian】](https://obsidian.md/)使用Markdown语法的笔记软件，免费，提供丰富的主题、插件
-
-- <Badge type="tip" text="记忆" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【AnkiDroid】](https://apps.ankiweb.net/) 以卡片的方式记忆知识碎片, 记忆卡片
-
 - <Badge type="warning" text="文本" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Sublime Text】](https://www.sublimetext.com/)文本编辑, 免费
+
+- <Badge type="warning" text="文本" />::bi:apple /#1ccdfc::[【CotEditor】](https://www.sublimetext.com/)文本编辑, 免费
 
 - <Badge type="warning" text="文本" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Notepad++】](https://notepad-plus-plus.org/) 文本编辑, 免费，插件较丰富。支持多种编程语言的语法高亮
 
