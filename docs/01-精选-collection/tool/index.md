@@ -6,13 +6,17 @@ permalink: /collection/tool/
 
 ## ::streamline-ultimate-color:office-desk-2 /#fe5a28:: 学习
 
-- <Badge type="info" text="外语" />::logos:chrome::::mdi:cellphone /#1ccdfc::[【Relingo】](https://relingo.net/) 是一款 AI 驱动的外语学习工具（浏览器插件 + 手机 App），核心是 “上网即背词”，在浏览外文网页、看视频时自动高亮生词、翻译并生成个性化生词本，主打无痛积累词汇
+- <Badge type="info" text="外语" />::logos:chrome::::mdi:cellphone /#1ccdfc::[【Relingo】](https://relingo.net/)  AI 驱动的外语学习工具（浏览器插件 + 手机 App），核心是 “上网即背词”，在浏览外文网页、看视频时自动高亮生词、翻译并生成个性化生词本，主打无痛积累词汇
+
+- <Badge type="info" text="文献" />::logos:chrome::::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Zotero】](https://www.zotero.org/) 免费开源的文献管理软件，核心帮你收集、整理、阅读、引用、分享学术文献与研究资料，学生/科研必备
+
+- <Badge type="info" text="文献" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【小绿鲸】](https://www.xljsci.com/) 集翻译、笔记、文献管理、文献汇报、写作功能于一体的云端英文文献阅读器
 
 - <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Typora】](https://www.typora.io/) Markdown编辑器，支持实时预览，自定义主题，文件树，目录树等
 
-- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Obsidian】](https://obsidian.md/) 是一款以本地 Markdown 文件为核心的个人知识管理与笔记工具，免费，双向链接 + 图谱。扩展性极强，提供丰富的主题、插件（例如 AI 插件：Copilot，Text Generator）
+- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Obsidian】](https://obsidian.md/) 以本地 Markdown 文件为核心的个人知识管理与笔记工具，免费，双向链接 + 图谱。扩展性极强，提供丰富的主题、插件（例如 AI 插件：Copilot，Text Generator）
 
-- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Logseq】](https://logseq.com/) 是一款以结构化大纲和块级链接为特色的笔记软件，兼容Markdown 与 Org-mode，文件按日期和页面自动组织，对于阅读和标注 PDF 文件更友好。内置 Git 同步、查询、任务管理，虽然插件较少但核心功能开箱即用
+- <Badge type="info" text="笔记" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【Logseq】](https://logseq.com/) 以结构化大纲和块级链接为特色的笔记软件，兼容Markdown 与 Org-mode，文件按日期和页面自动组织，对于阅读和标注 PDF 文件更友好。内置 Git 同步、查询、任务管理，虽然插件较少但核心功能开箱即用
 
 - <Badge type="tip" text="记忆" />::bi:windows /#1ccdfc::::bi:apple /#1ccdfc::[【AnkiDroid】](https://apps.ankiweb.net/) 以卡片的方式记忆知识碎片, 记忆卡片
 
