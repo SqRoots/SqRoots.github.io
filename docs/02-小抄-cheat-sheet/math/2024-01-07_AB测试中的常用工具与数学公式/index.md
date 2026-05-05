@@ -15,10 +15,8 @@ permalink: /cheat-sheet/math/ab/
 
 我还写了 2 个用于实验后计算**显著性、置信区间、效应量、MDE** 的 A/B 实验小工具：
 1. Excel 工具：<ActionButton text="AB实验小工具_v1.4.xlsx" color="green" icon="vscode-icons:file-type-excel" url="/downloads/AB实验小工具_v1.4.xlsx" />。
-2. Python 工具：安装：`pip install abetter`，说明：[ABetter](https://github.com/SqRoots/ABetter)。
+2. Python 工具：安装：`pip install abetter`，说明文档：[ABetter（GitHub）](https://github.com/SqRoots/ABetter)。
 
-
-todo: 补充其他程序语言的计算代码
 
 ## 二、符号说明与相关统计知识
 
