@@ -1,21 +1,69 @@
 ---
-title: ・经纬度（草稿）
+title: ・经纬度
 createTime: 2026-04-19 22:51:21
 permalink: /cheat-sheet/universe/space/lat-lon/
 ---
 
 ### 1️⃣ 简介
 
-
+在地理坐标系中，用经度和纬度两个坐标，确定地球表面上的平面位置，不同使用场景的坐标系有所差异，经纬度的定义大体如下：
+- **纬度**：平行于赤道，东西闭合，赤道的纬度是 0°，北半球纬度是正的，北极是 90°，南半球的纬度是负的，南极是 -90°。
+- **经度**：垂直于纬度，经过南北两极，不闭合，英国格林尼治天文台的经度是 0°，该天文台以东经度为正、以西经度为负，并且 +180° 与 -180° 这两条经线重叠，约等于国际日期变更线（是一条折线，基本都在太平洋上）。
 
 ### 2️⃣ 坐标转换
 
-WGS84
+在国内使用地图经纬度时，常用的坐标系有以下4种。在做坐标转换时，分为两块 `Web Mercator <--> WGS-84` 之间的转换，以及 `WGS-84，GCJ-02，BD-09` 之间的相互转换：
+- **Web Mercator**（Web墨卡托投影）是墨卡托投影的一种变体，被Web地图应用业界普遍采纳。几乎所有主要的在线地图提供商都使用这一标准，包括谷歌地图、Mapbox、Bing地图、OpenStreetMap、MapQuest、Esri等等。其正式的EPSG标识符是EPSG:3857。
 
-GCJ02
+- **WGS-84**（世界大地测量系统，World Geodetic System, WGS）是使用最广泛的坐标系，也是世界通用的坐标系，GPS设备得到的经纬度就是在WGS84坐标系下的经纬度。通常通过底层接口得到的定位信息都是WGS84坐标系。
 
-BD09
+- **GCJ-02**（国测局坐标：G-Guojia国家，C-Cehui测绘，J-Ju局），又被称为火星坐标系，是一种基于WGS-84制定的大地测量系统，由中国国测局制定。此坐标系所采用的混淆算法会在经纬度中加入随机的偏移。国家规定，中国大陆所有公开地理数据都需要至少用GCJ-02进行加密，也就是说我们从国内公司的产品中得到的数据，一定是经过了加密的。绝大部分国内互联网地图提供商都是使用GCJ-02坐标系，包括高德地图，谷歌地图中国区等。
 
+- **BD-09**（百度坐标系，Baidu, BD）是百度地图使用的地理坐标系，其在GCJ-02上多增加了一次变换，用来保护用户隐私。从百度产品中得到的坐标都是BD-09坐标系。
+
+
+```bash title="安装用到的包"
+pip install pyproj coord-convert
+```
+
+
+```python title="WGS84, GCJ-02, BD-09 之间互转"
+# 注意，输入坐标和输出坐标均是（经度，纬度）
+from coord_convert.transform import (
+    wgs2gcj,
+    gcj2wgs,
+    gcj2bd,
+    bd2gcj,
+    wgs2bd,
+    bd2wgs,
+)
+
+# ---------- WGS84 <-> GCJ-02 ----------
+wgs2gcj(lng, lat)
+gcj2wgs(lng, lat)
+
+# ---------- GCJ-02 <-> BD-09 ----------
+gcj2bd(lng, lat)
+bd2gcj(lng, lat)
+
+# ---------- WGS84 <-> BD-09 ----------
+wgs2bd(lng, lat)
+bd2wgs(lng, lat)
+```
+
+```python title="Web Mercator <-> WGS84"
+# 注意，输入坐标和输出坐标均是（经度，纬度）
+wgs84_to_web_mercator = Transformer.from_crs( "EPSG:4326", "EPSG:3857", always_xy=True)
+web_mercator_to_wgs84 = Transformer.from_crs("EPSG:3857", "EPSG:4326", always_xy=True)
+
+def wgs84_to_web(lng, lat):
+    x, y = wgs84_to_web_mercator.transform(lng, lat)
+    return x, y
+
+def web_to_wgs84(x, y):
+    lng, lat = web_mercator_to_wgs84.transform(x, y)
+    return lng, lat
+```
 
 
 ### 3️⃣ 计算距离
@@ -24,6 +72,13 @@ BD09
 
 - 通常使用 `geopy.distance.distance` 即可满足要求。
 - 更高精度要求可以使用 `pyproj.Geod`（可以指定坐标系）。
+
+::: tip 注意：不同包中经纬度的顺序不同！
+- geopy 常见写法：(lat, lon)
+- pyproj 常见写法：(lon, lat)
+- shapely.Point(x, y)：通常理解成 (lon, lat)
+:::
+
 
 ```python title="计算两点距离（简洁）"
 from geopy.distance import distance, geodesic, great_circle
@@ -122,14 +177,40 @@ for lon, lat in zip(lon,lat):
 ```
 
 
-
-#### 3.3 路径规划(todo)
-
-
-
 ### 4️⃣ 绘图
 
-[Folium](https://python-visualization.github.io/folium/latest/)
+在 Python 中绘制可交互的地图，并需要导出 HTML 文件，使用 [Folium](https://python-visualization.github.io/folium/latest/) 是个不错的选择，注意使用 `WGS84` 坐标系。
+
+```python title="示例：在地图上标记3家门店"
+import folium
+from folium.plugins import MarkerCluster
+
+stores = [
+    {"name": "门店A", "lat": 31.2304, "lon": 121.4737, "sales": 120},
+    {"name": "门店B", "lat": 31.2200, "lon": 121.4600, "sales": 80},
+    {"name": "门店C", "lat": 31.2500, "lon": 121.4900, "sales": 300},
+]
+
+m = folium.Map(location=[31.2304, 121.4737], zoom_start=12)
+cluster = MarkerCluster().add_to(m)
+
+for s in stores:
+    color = "green" if s["sales"] >= 200 else "blue" if s["sales"] >= 100 else "orange"
+    html = f"""
+    <b>{s['name']}</b><br>
+    销量: {s['sales']}
+    """
+    folium.Marker(
+        location=[s["lat"], s["lon"]],
+        popup=html,
+        icon=folium.Icon(color=color)
+    ).add_to(cluster)
+
+folium.LayerControl().add_to(m)
+
+m # 展示
+# m.save("store_map.html") # 保存
+```
 
 
 
