@@ -1,7 +1,7 @@
 ---
 draft: true
 title: Test JSXGraph
-createTime: 2026/04/05 12:38:17
+createTime: 2026/04/02 00:00:00
 permalink: /puzzle/c638ma9l/
 ---
 
