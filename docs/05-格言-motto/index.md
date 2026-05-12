@@ -8,7 +8,7 @@ permalink: /motto/
 
 <div class="motto">
     <br/>
-    <div class="motto_content"><p id="motto_content" mottoId="1" style="text-align:center;white-space:pre-wrap;">{{ displayText }}</p></div>
+    <div class="motto_content"><p id="motto_content" motto-id="1" style="text-align:center;white-space:pre-wrap;">{{ displayText }}</p></div>
     <br>
     <div id="motto_author" class="motto_author">{{ displayAuthor }}</div>
     <br>
@@ -29,7 +29,6 @@ const displayAuthor = ref('. . . Loading . . .')
 
 // ===== 一次性加载全部数据 =====
 let motto_list = [];
-let max_id = 0;
 let motto = null;
 let url_motto_id = getURLMottoID();
 loadAllData();
@@ -37,9 +36,9 @@ loadAllData();
 // 修改文字的方法
 const changeText = () => {
     motto = updateMotto();
-    if(motto && motto.content !== undefined && motto.author !== undefined){
+    if(motto && motto.content !== undefined){
       displayText.value = motto.content || '客官别急，一大波格言正在赶来';
-      displayAuthor.value = ("—— " + motto.author + " ——") || '. . . Loading . . .';
+      displayAuthor.value = formatDisplayAuthor(motto);
     }
 
 }
@@ -55,35 +54,47 @@ async function loadAllData() {
     motto_list = [];
   }
   motto_list = [...motto_list];
-  max_id = Math.max(...motto_list.filter(e => e.id >= 0).map(item => item.id)) || 0;
 
     // 初始化元素内容
     motto = updateMotto(url_motto_id);
-    if(motto && motto.content !== undefined && motto.author !== undefined){
+    if(motto && motto.content !== undefined){
       displayText.value = motto.content || '客官别急，一大波格言正在赶来';
-      displayAuthor.value = ("—— " + motto.author + " ——") || '. . . Loading . . .'
+      displayAuthor.value = formatDisplayAuthor(motto)
     }
+}
+
+function formatDisplayAuthor(motto) {
+  const author = (motto?.author || '').trim();
+  const source = (motto?.source || '').trim();
+  const displaySource = source === '不详' ? '' : source;
+  const displayName = author && author !== '佚名' ? author : displaySource || '佚名';
+
+  return `—— ${displayName} ——`;
 }
 
 // 随机抽取一条格式，并展示
 function updateMotto(id) {
-  let n = motto_list.length;
   if(typeof document !== "undefined"){
+    const mottoContentEl = document.getElementById("motto_content");
+
     if(id==null){
       // 随机抽取一条格言
-      let old_id = document.getElementById("motto_content").mottoId || 1;
-      let new_id = getRandomInt(n, old_id);
-      motto = getMottoByID(new_id);
+      const old_id = mottoContentEl?.getAttribute('motto-id') || motto?.id;
+      motto = getRandomMottoExcept(old_id);
     } else {
       // 按id取格言
-      motto = getMottoByID(id)
+      motto = getMottoByID(id) || getRandomMottoExcept()
+    }
+
+    if(!motto){
+      return null;
     }
 
     // 更新 id
-    document.getElementById("motto_content").setAttribute('motto-id', motto.id);
+    mottoContentEl?.setAttribute('motto-id', motto.id);
     setURLMottoID(motto.id);
     displayText.value = motto.content || '客官别急，一大波格言正在赶来';
-    displayAuthor.value = ("—— " + motto.author + " ——") || '. . . Loading . . .'
+    displayAuthor.value = formatDisplayAuthor(motto)
     return motto;
     // // 更新 格言内容
     // document.getElementById("motto_content").innerHTML = motto.content.replaceAll('\n', '<br>') + '<br>';
@@ -100,20 +111,20 @@ function copyURLtoClipboard(){
 // 按id取格言
 function getMottoByID(id){
   for (let v of motto_list) {
-  if(v.id==id){return v}
+  if(String(v.id) === String(id)){return v}
   }
 }
 // 按序号取格言
 // function getMottoByIndex(i){
 //   return motto_list[i]
 // }
-// 随机整数，需要与老
-function getRandomInt(max, old_id) {
-  let new_id = old_id;
-  while (new_id==old_id) {
-  new_id = Math.floor(Math.random() * max);
-  }
-  return new_id;
+function getRandomMottoExcept(old_id) {
+  const candidates = old_id == null
+    ? motto_list
+    : motto_list.filter(item => String(item.id) !== String(old_id));
+  const pool = candidates.length > 0 ? candidates : motto_list;
+
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 // 获取URL中的 id 参数
 function getURLMottoID(){
