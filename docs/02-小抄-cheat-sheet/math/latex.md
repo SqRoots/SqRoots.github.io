@@ -480,7 +480,7 @@ $$
 |  3 | 方括号，中括号 | `\left[ \frac{a}{b} \right]`                         | $\left[ \frac{a}{b} \right]$                         |
 |  4 | 花括号，大括号 | `\left\{ \frac{a}{b} \right\}`                       | $\left\{ \frac{a}{b} \right\}$                       |
 |  5 | 角括号         | `\left \langle \frac{a}{b} \right \rangle`           | $\left \langle \frac{a}{b} \right \rangle$           |
-|  6 | 单竖线，绝对值 | `\left| \frac{a}{b} \right|`                         | $\left| \frac{a}{b} \right|$                         |
+|  6 | 单竖线，绝对值 | `\left\| \frac{a}{b} \right\|`                         | $\left\| \frac{a}{b} \right\|$                         |
 |  7 | 双竖线，范数   | `\left \| \frac{a}{b} \right \|`                     | $\left \| \frac{a}{b} \right \|$                     |
 |  8 | 高斯符号       | `\left \lbrack \frac{a}{b} \right \rbrack`           | $\left \lbrack \frac{a}{b} \right \rbrack$           |
 |  9 | 取底符号       | `\left \lfloor \frac{a}{b} \right \rfloor`           | $\left \lfloor \frac{a}{b} \right \rfloor$           |
@@ -489,7 +489,7 @@ $$
 | 12 | 上下箭头       | `\left \uparrow \frac{a}{b} \right \downarrow`       | $\left \uparrow \frac{a}{b} \right \downarrow$       |
 | 13 | 上下箭头       | `\left \Uparrow \frac{a}{b} \right \Downarrow`       | $\left \Uparrow \frac{a}{b} \right \Downarrow$       |
 | 14 | 上下箭头       | `\left \updownarrow \frac{a}{b} \right \Updownarrow` | $\left \updownarrow \frac{a}{b} \right \Updownarrow$ |
-| 15 | 混合括号       | `\left [ 0,1 \right )\left \langle \psi \right |`    | $\left [ 0,1 \right )\left \langle \psi \right |$    |
+| 15 | 混合括号       | `\left[ 0,1 \right)\left\langle \psi \right\Vert`    | $\left[ 0,1 \right)\left\langle \psi \right\Vert$    |
 | 16 | 单左括号       | `\left \{ \frac{a}{b} \right .`                      | $\left \{ \frac{a}{b} \right .$                      |
 | 17 | 单右括号       | `\left . \frac{a}{b} \right \}`                      | $\left . \frac{a}{b} \right \}$                      |
 
@@ -548,6 +548,4 @@ $$
 
 - 行内公式，这样可能并不好看：$f(x)=5+{\frac{1}{5}}$。
 - 行内公式，这样可能好看一些：$\begin{smallmatrix} f(x)=5+\frac{1}{5} \end{smallmatrix}$。
-
-
 
