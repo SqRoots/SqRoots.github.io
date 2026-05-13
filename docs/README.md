@@ -24,10 +24,10 @@ config:
         #   theme: sponsor
         #   text: 时光
         #   link: /moment/
-        -
-          theme: sponsor
-          text: 博客
-          link: https://blog.lixuan.xyz/
+        # -
+        #   theme: sponsor
+        #   text: 博客
+        #   link: https://blog.lixuan.xyz/
         -
           theme: sponsor
           text: 趣题
