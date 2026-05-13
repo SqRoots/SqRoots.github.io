@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sqroots-site",
+  "compatibility_date": "2026-05-13",
+  "assets": {
+    "directory": "./docs/.vuepress/dist"
+  }
+}
