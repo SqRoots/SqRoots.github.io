@@ -13,6 +13,167 @@ import ActionButton from './theme/components/ActionButton.vue'
 // import './theme/styles/custom.css'
 import './theme/styles/my-custom.css'
 
+const VERSION_URL = '/site-version.json'
+const IDLE_CHECK_INTERVAL = 15 * 60 * 1000
+const VISIBILITY_CHECK_INTERVAL = 5 * 60 * 1000
+const SLOW_NAVIGATION_DELAY = 2500
+
+type VersionInfo = {
+  version?: string
+}
+
+let currentVersion: string | null = null
+let hasNewVersion = false
+let lastActivityAt = Date.now()
+let activityBeforePointerAt = lastActivityAt
+let hiddenAt = 0
+let lastVersionCheckAt = 0
+let versionCheckPromise: Promise<boolean> | null = null
+
+const isClient = typeof window !== 'undefined'
+
+const getVersion = async (): Promise<string | null> => {
+  try {
+    const response = await fetch(`${VERSION_URL}?t=${Date.now()}`, {
+      cache: 'no-store',
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+
+    if (!response.ok) return null
+
+    const data = await response.json() as VersionInfo
+    return typeof data.version === 'string' && data.version.length > 0
+      ? data.version
+      : null
+  } catch {
+    return null
+  }
+}
+
+const checkSiteVersion = async (): Promise<boolean> => {
+  if (versionCheckPromise) return versionCheckPromise
+
+  versionCheckPromise = (async () => {
+    lastVersionCheckAt = Date.now()
+
+    const latestVersion = await getVersion()
+    if (!latestVersion) return false
+
+    if (!currentVersion) {
+      currentVersion = latestVersion
+      return false
+    }
+
+    hasNewVersion = latestVersion !== currentVersion
+    return hasNewVersion
+  })()
+
+  try {
+    return await versionCheckPromise
+  } finally {
+    versionCheckPromise = null
+  }
+}
+
+const isInternalNavigationLink = (target: EventTarget | null): HTMLAnchorElement | null => {
+  if (!(target instanceof Element)) return null
+
+  const link = target.closest('a[href]')
+  if (!(link instanceof HTMLAnchorElement)) return null
+
+  if (link.target && link.target !== '_self') return null
+  if (link.download) return null
+
+  const url = new URL(link.href, window.location.href)
+  if (url.origin !== window.location.origin) return null
+  if (url.pathname === window.location.pathname && url.hash) return null
+
+  return link
+}
+
+const setupSiteVersionCheck = (): void => {
+  if (!isClient) return
+
+  void checkSiteVersion()
+
+  const updateActivity = (): void => {
+    lastActivityAt = Date.now()
+  }
+
+  const updatePointerActivity = (): void => {
+    activityBeforePointerAt = lastActivityAt
+    lastActivityAt = Date.now()
+  }
+
+  window.addEventListener('pointerdown', updatePointerActivity, { passive: true })
+  window.addEventListener('keydown', updateActivity, { passive: true })
+  window.addEventListener('scroll', updateActivity, { passive: true })
+
+  document.addEventListener('visibilitychange', () => {
+    const now = Date.now()
+
+    if (document.visibilityState === 'hidden') {
+      hiddenAt = now
+      return
+    }
+
+    const hiddenFor = hiddenAt > 0 ? now - hiddenAt : 0
+    const checkIsFresh = now - lastVersionCheckAt < VISIBILITY_CHECK_INTERVAL
+
+    if (hiddenFor >= VISIBILITY_CHECK_INTERVAL && !checkIsFresh) {
+      void checkSiteVersion()
+    }
+  })
+
+  document.addEventListener('click', (event) => {
+    const link = isInternalNavigationLink(event.target)
+    if (!link) return
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+
+    const now = Date.now()
+    const wasIdle = now - activityBeforePointerAt >= IDLE_CHECK_INTERVAL
+    const checkIsFresh = now - lastVersionCheckAt < VISIBILITY_CHECK_INTERVAL
+    const targetHref = link.href
+    const startPath = `${window.location.pathname}${window.location.search}${window.location.hash}`
+
+    if (hasNewVersion) {
+      updateActivity()
+      event.preventDefault()
+      window.location.assign(targetHref)
+      return
+    }
+
+    if (wasIdle && !checkIsFresh) {
+      updateActivity()
+      event.preventDefault()
+      void checkSiteVersion().then((versionChanged) => {
+        if (versionChanged) {
+          window.location.assign(targetHref)
+          return
+        }
+
+        window.location.assign(targetHref)
+      })
+      return
+    }
+
+    updateActivity()
+
+    window.setTimeout(() => {
+      const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`
+      if (currentPath !== startPath) return
+
+      void checkSiteVersion().then((versionChanged) => {
+        if (versionChanged) {
+          window.location.reload()
+        }
+      })
+    }, SLOW_NAVIGATION_DELAY)
+  }, true)
+}
+
 export default defineClientConfig({
   enhance({ app }) {
     // built-in components
@@ -27,5 +188,8 @@ export default defineClientConfig({
     app.component('AIModels', AIModels)
     app.component('FriendLinks', FriendLinks)
     app.component('ActionButton', ActionButton)
+  },
+  setup() {
+    setupSiteVersionCheck()
   },
 })

@@ -13,6 +13,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 import { relativeCoverPlugin } from './plugins/relativeCoverPlugin'
+import { siteVersionPlugin } from './plugins/siteVersionPlugin'
 
 export default defineUserConfig({
   base: '/',
@@ -26,7 +27,7 @@ export default defineUserConfig({
   ],
 
   bundler: viteBundler(),
-  plugins: [relativeCoverPlugin()],
+  plugins: [relativeCoverPlugin(), siteVersionPlugin()],
   shouldPrefetch: false, // 站点较大，页面数量较多时，不建议启用
 
   theme: plumeTheme({
