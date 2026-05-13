@@ -2,6 +2,9 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "sqroots-site",
   "compatibility_date": "2026-05-13",
+  "build": {
+    "command": "pnpm docs:build"
+  },
   "assets": {
     "directory": "./docs/.vuepress/dist"
   }

@@ -7,7 +7,7 @@
   "author": "SqRoots <lixuan.xyz@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "cf:deploy": "pnpm docs:build && npx wrangler versions upload",
+    "cf:deploy": "npx wrangler deploy",
     "docs:build": "vuepress build docs --clean-cache --clean-temp",
     "docs:dev": "vuepress dev docs",
     "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
