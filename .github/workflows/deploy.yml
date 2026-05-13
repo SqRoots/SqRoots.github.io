@@ -51,6 +51,24 @@ jobs:
             echo "✅ CNAME 文件已保留"
           fi
 
+      # Cloudflare connected to the generated gh-pages branch needs its own
+      # Wrangler config because that branch only contains static output.
+      - name: Add Cloudflare config to dist
+        run: |
+          cat > docs/.vuepress/dist/wrangler.jsonc <<'EOF'
+          {
+            "name": "sqroots-site",
+            "compatibility_date": "2026-05-13",
+            "assets": {
+              "directory": "."
+            }
+          }
+          EOF
+          cat > docs/.vuepress/dist/.assetsignore <<'EOF'
+          wrangler.jsonc
+          .assetsignore
+          EOF
+
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
       - name: Deploy to GitHub Pages
