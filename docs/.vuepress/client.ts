@@ -167,7 +167,7 @@ const setupSiteVersionCheck = (): void => {
 
       void checkSiteVersion().then((versionChanged) => {
         if (versionChanged) {
-          window.location.reload()
+          window.location.assign(targetHref)
         }
       })
     }, SLOW_NAVIGATION_DELAY)
