@@ -36,7 +36,6 @@ const isClient = typeof window !== 'undefined'
 const getVersion = async (): Promise<string | null> => {
   try {
     const response = await fetch(VERSION_URL, {
-      cache: 'no-cache',
       headers: {
         Accept: 'application/json',
       },
