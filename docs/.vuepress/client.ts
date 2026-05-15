@@ -17,6 +17,7 @@ const VERSION_URL = '/site-version.json'
 const IDLE_CHECK_INTERVAL = 15 * 60 * 1000
 const VISIBILITY_CHECK_INTERVAL = 5 * 60 * 1000
 const SLOW_NAVIGATION_DELAY = 2500
+const VERSION_CHECK_NAVIGATION_TIMEOUT = 800
 
 type VersionInfo = {
   version?: string
@@ -34,8 +35,8 @@ const isClient = typeof window !== 'undefined'
 
 const getVersion = async (): Promise<string | null> => {
   try {
-    const response = await fetch(`${VERSION_URL}?t=${Date.now()}`, {
-      cache: 'no-store',
+    const response = await fetch(VERSION_URL, {
+      cache: 'no-cache',
       headers: {
         Accept: 'application/json',
       },
@@ -75,6 +76,14 @@ const checkSiteVersion = async (): Promise<boolean> => {
   } finally {
     versionCheckPromise = null
   }
+}
+
+const waitForVersionCheckBeforeNavigation = async (): Promise<boolean> => {
+  const timeout = new Promise<false>((resolve) => {
+    window.setTimeout(() => resolve(false), VERSION_CHECK_NAVIGATION_TIMEOUT)
+  })
+
+  return Promise.race([checkSiteVersion(), timeout])
 }
 
 const isInternalNavigationLink = (target: EventTarget | null): HTMLAnchorElement | null => {
@@ -148,7 +157,7 @@ const setupSiteVersionCheck = (): void => {
     if (wasIdle && !checkIsFresh) {
       updateActivity()
       event.preventDefault()
-      void checkSiteVersion().then((versionChanged) => {
+      void waitForVersionCheckBeforeNavigation().then((versionChanged) => {
         if (versionChanged) {
           window.location.assign(targetHref)
           return
