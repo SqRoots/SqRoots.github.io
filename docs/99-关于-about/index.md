@@ -14,7 +14,7 @@ permalink: /about/
 
 内容：有趣的问题 + 常用的公式 + 励志的格言 ……
 
-致谢：[VuePress Plume](https://theme-plume.vuejs.press/)，[GitHub](https://github.com/)， [Cloudflare](https://www.cloudflare.com/)，[JSXGraph](https://jsxgraph.uni-bayreuth.de/)。
+致谢：[VuePress Plume](https://theme-plume.vuejs.press/)，[GitHub](https://github.com/)， [Cloudflare](https://www.cloudflare.com/)，[JSXGraph](https://jsxgraph.uni-bayreuth.de/)，[iconifhy](https://icon-sets.iconify.design/)。
 
 ::: 
 
