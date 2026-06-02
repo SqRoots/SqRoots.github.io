@@ -49,6 +49,10 @@ providers: # AI 服务商
     logo: /images/ai/openrouter.ai.svg
     url: https://openrouter.ai/
     border: true
+  - name: CometAPI
+    logo: /images/ai/cometapi.com.svg
+    url: https://www.cometapi.com/
+    border: true
   - name: OpenAI
     logo: /images/ai/providers/openai.jpeg
     url: https://openai.com/
