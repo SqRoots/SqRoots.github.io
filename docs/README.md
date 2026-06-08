@@ -30,6 +30,10 @@ config:
         #   link: https://blog.lixuan.xyz/
         -
           theme: sponsor
+          text: 摄影
+          link: https://photo.lixuan.me/
+        -
+          theme: sponsor
           text: 趣题
           link: /puzzle/
         -

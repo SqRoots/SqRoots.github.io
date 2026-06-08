@@ -12,6 +12,7 @@ export default defineNavbarConfig([
   { text: '小抄', link: '/cheat-sheet/computer/color/', icon: 'hugeicons:note-01' },
   // { text: '时光', link: '/moment/', icon: 'mingcute:moment-line' },
   // { text: '博客', link: 'https://blog.lixuan.xyz/', icon: 'fa7-solid:blog' },
+  { text: '摄影', link: 'https://photo.lixuan.me/', icon: 'material-symbols:add-a-photo-outline' },
   { text: '趣题', link: '/puzzle/', icon: 'tabler:puzzle' },
   { text: '格言', link: '/motto/', icon: 'ri:quill-pen-line' },
   { text: '关于', icon: 'ix:about', items:[
