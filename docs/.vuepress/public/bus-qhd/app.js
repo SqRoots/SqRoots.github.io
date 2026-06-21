@@ -1,10 +1,11 @@
 const COLORS = ["#1769e0", "#ef5b55", "#16a47a", "#8b5cf6", "#f59e0b", "#0ea5b7", "#e74694", "#65758b", "#84a71e", "#d35f18", "#5b74d6", "#00a0c7"];
-const state = { data: null, selected: new Set(), routeColors: new Map(), activeStation: null, direction: 0, layers: new Map(), stationHighlight: null };
+const state = { data: null, selected: new Set(), routeColors: new Map(), activeStation: null, direction: 0, layers: new Map(), stationHighlight: null, scalableCircles: [] };
 
 const map = new BMapGL.Map("map", { enableMapClick: false });
 map.centerAndZoom(toBaiduPoint(119.58, 39.93), 11);
 map.enableScrollWheelZoom(true);
 map.addControl(new BMapGL.ZoomControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT }));
+map.addEventListener("zoomend", updateCircleSizes);
 
 const byId = id => document.getElementById(id);
 const routeList = byId("route-list");
@@ -103,6 +104,7 @@ function sync() {
 function drawSelected() {
   state.layers.forEach(overlays => overlays.forEach(overlay => map.removeOverlay(overlay)));
   state.layers.clear();
+  state.scalableCircles = [];
   if (state.stationHighlight) {
     state.stationHighlight.forEach(overlay => map.removeOverlay(overlay));
     state.stationHighlight = null;
@@ -120,9 +122,12 @@ function drawSelected() {
     [outline, routeLine].forEach(overlay => { map.addOverlay(overlay); overlays.push(overlay); });
     line.stations.filter(s => s.lat && s.lng).forEach((station, index) => {
       const point = toBaiduPoint(station.lng, station.lat);
-      const marker = new BMapGL.Circle(point, index === 0 || index === line.stations.length - 1 ? 8 : 5, {
+      const isTerminus = index === 0 || index === line.stations.length - 1;
+      const baseRadius = isTerminus ? 8 : 5;
+      const marker = new BMapGL.Circle(point, visibleCircleRadius(point, baseRadius, isTerminus ? 5 : 4), {
         strokeColor: color, strokeWeight: 2, strokeOpacity: 1, fillColor: "#fff", fillOpacity: 1
       });
+      state.scalableCircles.push({ overlay: marker, point, baseRadius, minPixels: isTerminus ? 5 : 4 });
       marker.addEventListener("click", () => {
         const content = `<strong>${escapeHtml(station.name)}</strong><br>${escapeHtml(line.full_name)}<br>第 ${station.sequence} 站`;
         map.openInfoWindow(new BMapGL.InfoWindow(content, { title: "公交站点" }), point);
@@ -151,14 +156,29 @@ function drawActiveStationHighlight() {
 
   const overlays = [];
   coordinates.forEach(point => {
-    const halo = new BMapGL.Circle(point, 24, { strokeColor: "#fff", strokeWeight: 4, strokeOpacity: 1, fillColor: "#ffb000", fillOpacity: .38 });
-    const dot = new BMapGL.Circle(point, 12, { strokeColor: "#8a4b00", strokeWeight: 3, strokeOpacity: 1, fillColor: "#ffd54a", fillOpacity: 1 });
+    const halo = new BMapGL.Circle(point, visibleCircleRadius(point, 24, 12), { strokeColor: "#fff", strokeWeight: 4, strokeOpacity: 1, fillColor: "#ffb000", fillOpacity: .38 });
+    const dot = new BMapGL.Circle(point, visibleCircleRadius(point, 12, 7), { strokeColor: "#8a4b00", strokeWeight: 3, strokeOpacity: 1, fillColor: "#ffd54a", fillOpacity: 1 });
+    state.scalableCircles.push(
+      { overlay: halo, point, baseRadius: 24, minPixels: 12 },
+      { overlay: dot, point, baseRadius: 12, minPixels: 7 }
+    );
     const label = new BMapGL.Label(`<span class="active-station-label">${escapeHtml(state.activeStation)}</span>`, { position: point, offset: new BMapGL.Size(-35, -42) });
     label.setStyle({ border: "0", background: "transparent" });
     dot.addEventListener("click", () => map.openInfoWindow(new BMapGL.InfoWindow(`<strong>${escapeHtml(state.activeStation)}</strong><br>当前筛选站点`), point));
     [halo, dot, label].forEach(overlay => { map.addOverlay(overlay); overlays.push(overlay); });
   });
   state.stationHighlight = overlays;
+}
+
+function visibleCircleRadius(point, baseRadius, minPixels) {
+  const metersPerPixel = 156543.03392 * Math.cos(point.lat * Math.PI / 180) / Math.pow(2, map.getZoom());
+  return Math.max(baseRadius, minPixels * metersPerPixel);
+}
+
+function updateCircleSizes() {
+  state.scalableCircles.forEach(circle => {
+    circle.overlay.setRadius(visibleCircleRadius(circle.point, circle.baseRadius, circle.minPixels));
+  });
 }
 
 routeList.addEventListener("click", event => {
