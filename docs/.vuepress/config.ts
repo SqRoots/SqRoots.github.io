@@ -26,7 +26,29 @@ export default defineUserConfig({
     ['link', { rel: 'icon', type: 'image/png', href: '/favicon.ico' }],
   ],
 
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    viteOptions: {
+      plugins: [
+        {
+          name: 'static-app-directory-index',
+          configureServer(server) {
+            server.middlewares.use((request, _response, next) => {
+              const staticAppDirectories = ['/bus-qhd/']
+              if (request.url && staticAppDirectories.includes(request.url)) {
+                request.url += 'index.html'
+              } else if (
+                request.url?.startsWith('/job/')
+                && request.headers.accept?.includes('text/html')
+              ) {
+                request.url = '/job/index.html'
+              }
+              next()
+            })
+          },
+        },
+      ],
+    },
+  }),
   plugins: [relativeCoverPlugin(), siteVersionPlugin()],
   shouldPrefetch: false, // 站点较大，页面数量较多时，不建议启用
 

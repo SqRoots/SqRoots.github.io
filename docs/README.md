@@ -56,13 +56,18 @@ config:
       -
         title: 【摄影】
         icon: 📷
-        link: https://photo.lixuan.xyz/
+        link: https://photo.lixuan.me/
         details: 没有正式学过摄影，求大佬指教
       -
         title: 【地图找工作】
         icon: grommet-icons:map
-        link: https://lixuan.me/job/index.html
+        link: /job/
         details: 在租房时使用过“地图找房”，感觉很方便<br>于是也做了一个Demo
+      -
+        title: 【公交线路-秦皇岛】
+        icon: grommet-icons:map
+        link: /bus-qhd/
+        details: 可以展示经过某个站点的所有公交线路<br>可以选择多条公交线路
       -
         title: 【Mathematica问答社区】
         icon: vscode-icons:file-type-wolfram

@@ -10,11 +10,13 @@ permalink: /about/
 
 ::: info 关于网站
 
-目的：【社交】个人名片【记录】思考、想法、脑洞【发现】打开心灵的一扇窗
+目的：【社交】个人名片【记录】思考、想法、脑洞【发现】打开心灵的一扇窗。
 
 内容：有趣的问题 + 常用的公式 + 励志的格言 ……
 
 致谢：[VuePress Plume](https://theme-plume.vuejs.press/)，[GitHub](https://github.com/)， [Cloudflare](https://www.cloudflare.com/)，[JSXGraph](https://jsxgraph.uni-bayreuth.de/)，[iconifhy](https://icon-sets.iconify.design/)。
+
+小工具：【[地图找工作](/job/)】【[公交线路-秦皇岛](/bus-qhd/)】
 
 ::: 
 
