@@ -69,6 +69,11 @@ config:
         link: /bus-qhd/
         details: 可以展示经过某个站点的所有公交线路<br>可以选择多条公交线路
       -
+        title: 【日语50音】
+        icon: uil:letter-japanese-a
+        link: /Japanese-50/
+        details: 初学日语50音
+      -
         title: 【Mathematica问答社区】
         icon: vscode-icons:file-type-wolfram
         link: https://mmaqa.com/

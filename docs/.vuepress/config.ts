@@ -33,7 +33,7 @@ export default defineUserConfig({
           name: 'static-app-directory-index',
           configureServer(server) {
             server.middlewares.use((request, _response, next) => {
-              const staticAppDirectories = ['/bus-qhd/']
+              const staticAppDirectories = ['/bus-qhd/', '/Japanese-50/']
               if (request.url && staticAppDirectories.includes(request.url)) {
                 request.url += 'index.html'
               } else if (
