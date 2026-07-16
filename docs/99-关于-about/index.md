@@ -18,6 +18,8 @@ permalink: /about/
 
 小工具：【[地图找工作](/job/)】【[公交线路-秦皇岛](/bus-qhd/)】
 
+旧网站：【[笔记](https://note.lixuan.xyz)】【[摄影](https://photo.lixuan.xyz/)】
+
 ::: 
 
 ### ::mdi:id-card-outline /#1dd0fd:: 个人简介

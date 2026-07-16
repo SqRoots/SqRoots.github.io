@@ -14,32 +14,34 @@ config:
       actions:
         -
           theme: sponsor
-          text: 精选
+          text: 导航
           link: /collection/web/navigation/
-        -
-          theme: sponsor
-          text: 小抄
-          link: /cheat-sheet/computer/color/
-        # -
-        #   theme: sponsor
-        #   text: 时光
-        #   link: /moment/
-        # -
-        #   theme: sponsor
-        #   text: 博客
-        #   link: https://blog.lixuan.xyz/
-        -
-          theme: sponsor
-          text: 摄影
-          link: https://photo.lixuan.me/
-        -
-          theme: sponsor
-          text: 趣题
-          link: /puzzle/
         -
           theme: sponsor
           text: 格言
           link: /motto/
+        -
+          theme: sponsor
+          text: 小抄
+          link: /cheat-sheet/computer/color/
+        -
+          theme: sponsor
+          text: 趣题
+          link: /puzzle/
+        # -
+        #   theme: sponsor
+        #   text: 时光
+        #   link: /moment/
+        -
+           theme: sponsor
+           text: 博客
+           link: https://blog.lixuan.me/
+        -
+          theme: sponsor
+          text: 摄影
+          link: https://photo.lixuan.me/
+
+
   -
     type: features
     features:
