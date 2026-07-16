@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "sqroots-site",
+  "name": "sqroots-github-io",
   "compatibility_date": "2026-05-13",
   "build": {
     "command": "pnpm docs:build"
