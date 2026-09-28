@@ -16,7 +16,7 @@ permalink: /about/
 
 致谢：[VuePress Plume](https://theme-plume.vuejs.press/)，[GitHub](https://github.com/)， [Cloudflare](https://www.cloudflare.com/)，[JSXGraph](https://jsxgraph.uni-bayreuth.de/)，[iconifhy](https://icon-sets.iconify.design/)。
 
-小工具：【[地图找工作](/job/)】【[公交线路-秦皇岛](/bus-qhd/)】
+小工具：【[地图找工作](/job/)】【[公交线路-秦皇岛](/bus-qhd/)】【[摩尔斯码练习](/lcwo.html)】
 
 旧网站：【[笔记](https://note.lixuan.xyz)】【[摄影](https://photo.lixuan.xyz/)】
 
