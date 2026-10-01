@@ -104,3 +104,9 @@ pnpm dlx vp-update
 
 - [vuepress](https://vuepress.vuejs.org/)
 - [vuepress-theme-plume](https://theme-plume.vuejs.press/)
+
+主题支持以下来源的图标：
+
+- [iconify](https://iconify.design/) - 默认支持
+- [iconfont](https://www.iconfont.cn/) - 可选
+- [fontawesome](https://fontawesome.com/) - 可选
