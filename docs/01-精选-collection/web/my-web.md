@@ -12,8 +12,7 @@ permalink: /collection/web/my-web/
   <LinkCard title="摄影" href="https://photo.lixuan.me/" icon="mdi:photo-camera"/>
   <LinkCard title="地图找工作" href="/job/" icon="grommet-icons:map"/>
   <LinkCard title="Mathematica论坛" href="https://mmaqa.com/" icon="vscode-icons:file-type-wolfram"/>
-  <LinkCard title="公交线路-秦皇岛" href="/bus-qhd/" icon="grommet-icons:map"/>
-  <LinkCard title="日语五十音入门" href="/Japanese-50/" icon="grommet-icons:map"/>
-  <LinkCard title="摩尔斯码练习" href="/lcwo/" icon="grommet-icons:map"/>
+  <LinkCard title="公交线路-秦皇岛" href="/bus-qhd/" icon="bi:bus-front-fill"/>
+  <LinkCard title="日语五十音入门" href="/Japanese-50/" icon="hugeicons:alphabet-japanese"/>
+  <LinkCard title="摩尔斯码练习" href="/lcwo/" icon="eva:radio-outline"/>
 </CardGrid>
-
