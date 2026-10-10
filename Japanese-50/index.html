@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日语五十音学习</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar" aria-label="应用工具栏">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">あ</div>
+          <div>
+            <h1>五十音图学习</h1>
+            <p>掌握日语的第一步</p>
+          </div>
+        </div>
+        <nav class="mode-tabs" aria-label="学习模式">
+          <button class="mode-tab is-active" type="button">清音</button>
+          <button class="mode-tab" type="button" disabled>浊音・半浊音</button>
+          <button class="mode-tab" type="button" disabled>拗音</button>
+        </nav>
+        <div class="stats" aria-label="学习状态">
+          <span><strong id="learnedCount">0</strong>/46 已点读</span>
+          <span><strong>7</strong> 天练习</span>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <section class="chart-panel" aria-labelledby="chartTitle">
+          <div class="section-head">
+            <div>
+              <h2 id="chartTitle">清音（せいおん）</h2>
+              <p>点击假名查看详情与书写动画</p>
+            </div>
+            <button class="utility-button" id="studyMode" type="button">
+              <span aria-hidden="true">◇</span>
+              学习模式
+            </button>
+          </div>
+          <div class="kana-chart" id="kanaChart" aria-label="平假名五十音表"></div>
+          <div class="chart-footer">
+            <span>行：横向</span>
+            <span>段：纵向</span>
+            <span>共 46 个清音</span>
+          </div>
+        </section>
+
+        <aside class="detail-panel" aria-labelledby="currentLabel">
+          <div class="detail-header">
+            <div>
+              <p class="eyeline">当前选择</p>
+              <div class="selected-summary">
+                <div class="selected-kana" id="selectedKana">あ</div>
+                <div>
+                  <h2 id="currentLabel">a</h2>
+                  <p id="pronunciation">[ a ]</p>
+                  <p class="katakana-line">片假名：<strong id="selectedKatakana">ア</strong></p>
+                  <span id="groupTag">あ段・あ行</span>
+                </div>
+              </div>
+            </div>
+            <button class="utility-button" id="favoriteButton" type="button">☆ 收藏</button>
+          </div>
+
+          <div class="sound-block">
+            <h3>发音</h3>
+            <div class="sound-actions">
+              <button class="play-button" id="playButton" type="button" aria-label="播放当前假名读音">
+                <span aria-hidden="true">▶</span>
+              </button>
+              <button class="slow-button" id="slowButton" type="button">慢速播放</button>
+            </div>
+          </div>
+
+          <section class="stroke-section" aria-labelledby="strokeTitle">
+            <div class="stroke-head">
+              <h3 id="strokeTitle">笔顺动画</h3>
+              <label class="toggle">
+                <input type="checkbox" id="showGuide" checked />
+                显示笔顺
+              </label>
+              <button class="reset-button" id="resetStroke" type="button">重置</button>
+            </div>
+            <div class="stroke-content">
+              <svg id="strokeSvg" class="stroke-svg" viewBox="0 0 320 260" role="img" aria-label="假名笔顺图"></svg>
+              <ol class="stroke-list" id="strokeList"></ol>
+            </div>
+          </section>
+
+          <section class="mnemonic-section" aria-labelledby="mnemonicTitle">
+            <h3 id="mnemonicTitle">记忆诀窍</h3>
+            <div class="mnemonic-grid">
+              <div class="mnemonic-item">
+                <span>平假名</span>
+                <p id="hiraganaMnemonic">あ 像一个人张口发出“啊”的声音。</p>
+              </div>
+              <div class="mnemonic-item">
+                <span>片假名</span>
+                <p id="katakanaMnemonic">ア 像张开的嘴角，读作 a。</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="tip">
+            <strong>书写提示</strong>
+            <p id="tipText">注意第三笔的撇要从右上方向左下方，中间穿过竖弯钩。</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
