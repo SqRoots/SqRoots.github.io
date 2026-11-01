@@ -1,0 +1,1 @@
+var e={dashjs:!1,hlsjs:!1,mpegtsjs:!1},t=[`mp4`,`mp3`,`webm`,`ogg`];e.dashjs&&t.push(`mpd`,`dash`),e.hlsjs&&t.push(`m3u8`,`hls`),e.mpegtsjs&&t.push(`ts`,`flv`);var n=i(`timeline`),r=i(`collapse`);function i(e){return Symbol(``)}export{n,r as t};

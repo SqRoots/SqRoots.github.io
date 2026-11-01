@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>秦皇岛公交线路图</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./styles.css?v=20260621-2">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <header class="brand">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div>
+          <h1>秦皇岛公交线路图</h1>
+          <p id="data-summary">正在加载公交数据…</p>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="筛选方式">
+        <button class="tab active" data-tab="routes">选择线路</button>
+        <button class="tab" data-tab="stations">按站点筛选</button>
+      </nav>
+
+      <section class="panel active" id="routes-panel">
+        <div class="direction-toolbar">
+          <span class="direction-label">行驶方向</span>
+          <div class="direction-switch" role="group" aria-label="线路方向">
+            <button class="direction-button active" type="button" data-direction="0" aria-pressed="true"><span>去程</span><span aria-hidden="true">→</span></button>
+            <button class="direction-button" type="button" data-direction="1" aria-pressed="false"><span aria-hidden="true">←</span><span>返程</span></button>
+          </div>
+        </div>
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          <input id="route-search" type="search" placeholder="搜索线路、起点或终点">
+        </label>
+        <div class="panel-heading">
+          <span>公交线路</span>
+          <span id="route-result-count"></span>
+        </div>
+        <div class="result-list" id="route-list"></div>
+      </section>
+
+      <section class="panel" id="stations-panel">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
+          <input id="station-search" type="search" placeholder="输入站点名称，如：秦皇岛火车站">
+        </label>
+        <div class="station-hint" id="station-hint">选择站点后，将展示所有经过该站的线路。</div>
+        <div class="result-list" id="station-list"></div>
+      </section>
+
+      <footer class="selection-footer">
+        <div><strong id="selected-count">0</strong><span>条线路已选</span></div>
+        <button id="clear-all">清空</button>
+      </footer>
+    </aside>
+
+    <section class="map-area">
+      <header class="map-toolbar">
+        <div>
+          <h2 id="map-title">选择公交线路开始查看</h2>
+          <p id="map-subtitle">每条线路将使用不同颜色展示</p>
+        </div>
+        <button id="fit-map" class="secondary-button">适配全部线路</button>
+      </header>
+      <div id="map"></div>
+      <div class="legend" id="legend"></div>
+      <div class="empty-map" id="empty-map">
+        <div class="empty-icon"><span></span><span></span><span></span></div>
+        <h3>选择一条或多条公交线路</h3>
+        <p>也可以按站点筛选，快速查看所有途经线路。</p>
+      </div>
+    </section>
+  </main>
+  <script src="./config.js"></script>
+  <script src="./map-loader.js?v=20260621-1"></script>
+</body>
+</html>
